@@ -34,7 +34,41 @@ HEADERS += \
     include/analy/staticEvent/StaticCfg.h \
     include/analy/ptzEvent/PtzCfg.h \
     include/analy/pedestrianEvent/pass.h \
-    include/analy/pedestrianEvent/intra.h
+    include/analy/pedestrianEvent/intra.h \
+    script/isp_common/ispcommon.h \
+    script/isp_common/ispcminputport.h \
+    script/isp_common/ispcmglobal.h \
+    script/isp_pingpong/isppingpong.h \
+    script/isp_pingpong/ispppca_correction.h \
+    script/isp_pingpong/ispppccm.h \
+    script/isp_pingpong/ispppcnr.h \
+    script/isp_pingpong/ispppdecompander0.h \
+    script/isp_pingpong/ispppdecompander1.h \
+    script/isp_pingpong/ispppdemosaic_rgbir.h \
+    script/isp_pingpong/ispppds_dma_writer.h \
+    script/isp_pingpong/ispppds_gamma_rgb.h \
+    script/isp_pingpong/ispppds_sharpen.h \
+    script/isp_pingpong/ispppframe_stitch.h \
+    script/isp_pingpong/ispppfr_cs_conv.h \
+    script/isp_pingpong/ispppfr_dma_writer.h \
+    script/isp_pingpong/ispppfr_gamma_rgb.h \
+    script/isp_pingpong/ispppfr_sharpen.h \
+    script/isp_pingpong/ispppinput_formatter.h \
+    script/isp_pingpong/ispppmesh_shading.h \
+    script/isp_pingpong/ispppmetering_aexp.h \
+    script/isp_pingpong/ispppmetering_af.h \
+    script/isp_pingpong/ispppmetering_awb.h \
+    script/isp_pingpong/ispppmetering_ihist.h \
+    script/isp_pingpong/ispppradial_shading.h \
+    script/isp_pingpong/ispppraw_frontend.h \
+    script/isp_pingpong/ispppsensor_offset.h \
+    script/isp_pingpong/ispppsinter.h \
+    script/isp_pingpong/ispppblack_level.h \
+    script/isp_pingpong/isppptemper.h \
+    script/isp_pingpong/isppptop.h \
+    script/isp_pingpong/ispppwhite_balance_aexp.h \
+    script/isp_pingpong/ispppds_cs_conv.h \
+    script/isp_pingpong/isppingpongfrag1.h
 
 SOURCES += \
     src/common/main.cpp \
@@ -71,7 +105,41 @@ SOURCES += \
     src/analy/smokeFireEvent/SmokeFireCfg.cpp \
     src/analy/staticEvent/StaticCfg.cpp \
     src/analy/pedestrianEvent/intra.cpp \
-    src/analy/pedestrianEvent/pass.cpp
+    src/analy/pedestrianEvent/pass.cpp \
+    script/isp_common/ispcommon.cpp \
+    script/isp_common/ispcminputport.cpp \
+    script/isp_common/ispcmglobal.cpp \
+    script/isp_pingpong/isppingpong.cpp \
+    script/isp_pingpong/ispppca_correction.cpp \
+    script/isp_pingpong/ispppccm.cpp \
+    script/isp_pingpong/ispppcnr.cpp \
+    script/isp_pingpong/ispppdecompander0.cpp \
+    script/isp_pingpong/ispppdecompander1.cpp \
+    script/isp_pingpong/ispppdemosaic_rgbir.cpp \
+    script/isp_pingpong/ispppds_dma_writer.cpp \
+    script/isp_pingpong/ispppds_gamma_rgb.cpp \
+    script/isp_pingpong/ispppds_sharpen.cpp \
+    script/isp_pingpong/ispppframe_stitch.cpp \
+    script/isp_pingpong/ispppfr_cs_conv.cpp \
+    script/isp_pingpong/ispppfr_dma_writer.cpp \
+    script/isp_pingpong/ispppfr_gamma_rgb.cpp \
+    script/isp_pingpong/ispppfr_sharpen.cpp \
+    script/isp_pingpong/ispppinput_formatter.cpp \
+    script/isp_pingpong/ispppmesh_shading.cpp \
+    script/isp_pingpong/ispppmetering_aexp.cpp \
+    script/isp_pingpong/ispppmetering_af.cpp \
+    script/isp_pingpong/ispppmetering_awb.cpp \
+    script/isp_pingpong/ispppmetering_ihist.cpp \
+    script/isp_pingpong/ispppradial_shading.cpp \
+    script/isp_pingpong/ispppraw_frontend.cpp \
+    script/isp_pingpong/ispppsensor_offset.cpp \
+    script/isp_pingpong/ispppsinter.cpp \
+    script/isp_pingpong/ispppblack_level.cpp \
+    script/isp_pingpong/isppptemper.cpp \
+    script/isp_pingpong/isppptop.cpp \
+    script/isp_pingpong/ispppwhite_balance_aexp.cpp \
+    script/isp_pingpong/ispppds_cs_conv.cpp \
+    script/isp_pingpong/isppingpongfrag1.cpp
 
 INCLUDEPATH += \
     include/analy \

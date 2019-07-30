@@ -12,6 +12,8 @@
 #include "ptzEvent/PtzCfg.h"
 #include "smokeFireEvent/SmokeFireCfg.h"
 #include "staticEvent/StaticCfg.h"
+#include "script/isp_common/ispcommon.h"
+#include "script/isp_pingpong/isppingpong.h"
 
 class MainWindow : public QMainWindow
 {
@@ -31,6 +33,8 @@ public:
     PtzCfg *ptzConfg;
     SmokeFireCfg *sfConfig;
     StaticCfg *stConfig;
+    IspCommon *ptIspCm;
+    IspPingPong *ptIspPingPong;
     virtual QSize minimumSizeHint() const;
     virtual QSize sizeHint() const;
     void setAllConnect();

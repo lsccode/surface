@@ -17,9 +17,11 @@ MainWindow::MainWindow()
     ptzConfg = new PtzCfg;
     sfConfig = new SmokeFireCfg;
     stConfig = new StaticCfg;
-
+    ptIspCm = new IspCommon;
+    ptIspPingPong = new IspPingPong;
     mywidget->setIconSize(QSize(24, 24));
     mywidget->setTabShape(QTabWidget::Triangular);
+#if 0
     mywidget->addTab(playWin,QIcon(":/images/films.png"),"实时预览");
     mywidget->addTab(devConfg,QIcon(":/images/devCfg.png"),"设备配置");
     //mywidget->addTab(analyConfg,QIcon(":/images/analy.png"),"智能分析");
@@ -31,6 +33,10 @@ MainWindow::MainWindow()
     mywidget->addTab(sfConfig,QIcon(":/images/analy.png"),"烟火事件");
     mywidget->addTab(stConfig,QIcon(":/images/analy.png"),"静态事件");
     mywidget->addTab(advanceConfg,QIcon(":/images/analy.png"),"高级事件");
+#else
+    mywidget->addTab(ptIspCm,QIcon(":/images/devCfg.png"),"isp common");
+    mywidget->addTab(ptIspPingPong,QIcon(":/images/devCfg.png"),"isp pingpong");
+#endif
 
     setMinimumSize(900,480);
     setCentralWidget(mywidget);
