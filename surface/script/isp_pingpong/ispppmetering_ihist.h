@@ -2,6 +2,9 @@
 #define ISPPPMETERING_IHIST_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPmetering_ihist : public QWidget
 {

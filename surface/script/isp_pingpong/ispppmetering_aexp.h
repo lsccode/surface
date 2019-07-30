@@ -2,6 +2,9 @@
 #define ISPPPMETERING_AEXP_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPmetering_aexp : public QWidget
 {

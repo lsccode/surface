@@ -2,6 +2,9 @@
 #define ISPPPSINTER_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPsinter : public QWidget
 {

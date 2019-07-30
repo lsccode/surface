@@ -2,6 +2,9 @@
 #define ISPPPWHITE_BALANCE_AEXP_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPwhite_balance_aexp : public QWidget
 {

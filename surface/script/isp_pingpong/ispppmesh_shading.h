@@ -2,6 +2,9 @@
 #define ISPPPMESH_SHADING_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPmesh_shading : public QWidget
 {

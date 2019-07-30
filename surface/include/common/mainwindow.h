@@ -13,8 +13,9 @@
 #include "smokeFireEvent/SmokeFireCfg.h"
 #include "staticEvent/StaticCfg.h"
 #include "script/isp_common/ispcommon.h"
-#include "script/isp_pingpong/isppingpong.h"
-
+#include "script/isp_pingpong/isppingpongfrag1.h"
+#include "script/isp_pingpong/isppingpongfrag2.h"
+#include "script/isp_pingpong/isppingpongfrag3.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -34,7 +35,10 @@ public:
     SmokeFireCfg *sfConfig;
     StaticCfg *stConfig;
     IspCommon *ptIspCm;
-    IspPingPong *ptIspPingPong;
+    //IspPingPong *ptIspPingPong;
+    IspPingPongFrag1 *ptIspPingPongF1;
+    IspPingPongFrag2 *ptIspPingPongF2;
+    IspPingPongFrag3 *ptIspPingPongF3;
     virtual QSize minimumSizeHint() const;
     virtual QSize sizeHint() const;
     void setAllConnect();

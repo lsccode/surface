@@ -2,6 +2,9 @@
 #define ISPPPFR_GAMMA_RGB_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPfr_gamma_rgb : public QWidget
 {

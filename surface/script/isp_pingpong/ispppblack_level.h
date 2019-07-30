@@ -2,6 +2,9 @@
 #define ISPPPBLACK_LEVEL_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPblack_level : public QWidget
 {

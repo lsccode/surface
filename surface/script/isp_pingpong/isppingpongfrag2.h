@@ -1,5 +1,5 @@
-#ifndef ISPPINGPONG_H
-#define ISPPINGPONG_H
+#ifndef ISPPINGPONGFRAG2_H
+#define ISPPINGPONGFRAG2_H
 
 #include <QWidget>
 #include <QListWidget>
@@ -8,8 +8,7 @@
 #include "ispppca_correction.h"
 #include "ispppccm.h"
 #include "ispppcnr.h"
-#include "ispppdecompander0.h"
-#include "ispppdecompander1.h"
+#include "ispppdecompander.h"
 #include "ispppdemosaic_rgbir.h"
 #include "ispppds_cs_conv.h"
 #include "ispppds_dma_writer.h"
@@ -34,27 +33,15 @@
 #include "isppptop.h"
 #include "ispppwhite_balance_aexp.h"
 
-
-class IspPingPong : public QWidget
+class IspPingPongFrag2 : public QWidget
 {
     Q_OBJECT
 public:
-    explicit IspPingPong(QWidget *parent = 0);
-
+    explicit IspPingPongFrag2(QWidget *parent = 0);
 public:
     QListWidget *ptListWidget;
     QStackedLayout *ptStackedLayout;
 
-    IspPPblack_level *pt_black_level;
-    IspPPCa_correction *pt_Ca_correction;
-    IspPPCcm *pt_Ccm;
-    IspPPCnr *pt_Cnr;
-    IspPPdecompander0 *pt_decompander0;
-    IspPPdecompander1 *pt_decompander1;
-    IspPPdemosaic_rgbir *pt_demosaic_rgbir;
-    IspPPds_cs_conv *pt_ds_cs_conv;
-    IspPPds_dma_writer *pt_ds_dma_writer;
-    IspPPds_gamma_rgb *pt_ds_gamma_rgb;
     IspPPds_sharpen *pt_ds_sharpen;
     IspPPfr_cs_conv *pt_fr_cs_conv;
     IspPPfr_dma_writer *pt_fr_dma_writer;
@@ -65,20 +52,10 @@ public:
     IspPPmesh_shading *pt_mesh_shading;
     IspPPmetering_aexp *pt_metering_aexp;
     IspPPmetering_af *pt_metering_af;
-    IspPPmetering_awb *pt_metering_awb;
-    IspPPmetering_ihist *pt_metering_ihist;
-    IspPPradial_shading *pt_radial_shading;
-    IspPPraw_frontend *pt_raw_frontend;
-    IspPPsensor_offset *pt_sensor_offset;
-    IspPPsinter *pt_sinter;
-    IspPPtemper *pt_temper;
-    IspPPtop *pt_top;
-    IspPPwhite_balance_aexp *pt_white_balance_aexp;
-
 signals:
 
 public slots:
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
 };
 
-#endif // ISPPINGPONG_H
+#endif // ISPPINGPONGFRAG2_H

@@ -2,6 +2,9 @@
 #define ISPPPDS_CS_CONV_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPds_cs_conv : public QWidget
 {

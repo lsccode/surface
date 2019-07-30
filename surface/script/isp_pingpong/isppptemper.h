@@ -2,6 +2,9 @@
 #define ISPPPTEMPER_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPtemper : public QWidget
 {

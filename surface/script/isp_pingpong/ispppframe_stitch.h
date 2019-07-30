@@ -2,6 +2,9 @@
 #define ISPPPFRAME_STITCH_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPframe_stitch : public QWidget
 {

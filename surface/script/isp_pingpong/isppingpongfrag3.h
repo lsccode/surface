@@ -1,5 +1,5 @@
-#ifndef ISPPINGPONGFRAG1_H
-#define ISPPINGPONGFRAG1_H
+#ifndef ISPPINGPONGFRAG3_H
+#define ISPPINGPONGFRAG3_H
 
 #include <QWidget>
 #include <QListWidget>
@@ -33,28 +33,28 @@
 #include "isppptop.h"
 #include "ispppwhite_balance_aexp.h"
 
-class IspPingPongFrag1 : public QWidget
+class IspPingPongFrag3 : public QWidget
 {
     Q_OBJECT
 public:
-    explicit IspPingPongFrag1(QWidget *parent = 0);
+    explicit IspPingPongFrag3(QWidget *parent = 0);
 public:
     QListWidget *ptListWidget;
     QStackedLayout *ptStackedLayout;
 
-    IspPPblack_level *pt_black_level;
-    IspPPCa_correction *pt_Ca_correction;
-    IspPPCcm *pt_Ccm;
-    IspPPCnr *pt_Cnr;
-    IspPPdecompander *pt_decompander;
-    IspPPdemosaic_rgbir *pt_demosaic_rgbir;
-    IspPPds_cs_conv *pt_ds_cs_conv;
-    IspPPds_dma_writer *pt_ds_dma_writer;
-    IspPPds_gamma_rgb *pt_ds_gamma_rgb;
+    IspPPmetering_awb *pt_metering_awb;
+    IspPPmetering_ihist *pt_metering_ihist;
+    IspPPradial_shading *pt_radial_shading;
+    IspPPraw_frontend *pt_raw_frontend;
+    IspPPsensor_offset *pt_sensor_offset;
+    IspPPsinter *pt_sinter;
+    IspPPtemper *pt_temper;
+    IspPPtop *pt_top;
+    IspPPwhite_balance_aexp *pt_white_balance_aexp;
 signals:
 
 public slots:
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
 };
 
-#endif // ISPPINGPONGFRAG1_H
+#endif // ISPPINGPONGFRAG3_H

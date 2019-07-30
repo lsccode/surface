@@ -2,6 +2,9 @@
 #define ISPPPRADIAL_SHADING_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPradial_shading : public QWidget
 {

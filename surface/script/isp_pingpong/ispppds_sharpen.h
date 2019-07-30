@@ -2,6 +2,9 @@
 #define ISPPPDS_SHARPEN_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPds_sharpen : public QWidget
 {

@@ -18,7 +18,10 @@ MainWindow::MainWindow()
     sfConfig = new SmokeFireCfg;
     stConfig = new StaticCfg;
     ptIspCm = new IspCommon;
-    ptIspPingPong = new IspPingPong;
+    //ptIspPingPong = new IspPingPong;
+    ptIspPingPongF1 = new IspPingPongFrag1;
+    ptIspPingPongF2 = new IspPingPongFrag2;
+    ptIspPingPongF3 = new IspPingPongFrag3;
     mywidget->setIconSize(QSize(24, 24));
     mywidget->setTabShape(QTabWidget::Triangular);
 #if 0
@@ -35,13 +38,15 @@ MainWindow::MainWindow()
     mywidget->addTab(advanceConfg,QIcon(":/images/analy.png"),"高级事件");
 #else
     mywidget->addTab(ptIspCm,QIcon(":/images/devCfg.png"),"isp common");
-    mywidget->addTab(ptIspPingPong,QIcon(":/images/devCfg.png"),"isp pingpong");
+    mywidget->addTab(ptIspPingPongF1,QIcon(":/images/devCfg.png"),"isp pingpong frag1");
+    mywidget->addTab(ptIspPingPongF2,QIcon(":/images/devCfg.png"),"isp pingpong frag2");
+    mywidget->addTab(ptIspPingPongF3,QIcon(":/images/devCfg.png"),"isp pingpong frag3");
 #endif
 
     setMinimumSize(900,480);
     setCentralWidget(mywidget);
     setWindowIcon(QIcon(":/images/appMain.png"));
-    setWindowTitle(tr("Smart Nvt"));
+    setWindowTitle(tr("ISP script test"));
 
     setAllConnect();
 

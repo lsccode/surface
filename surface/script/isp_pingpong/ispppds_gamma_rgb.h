@@ -2,6 +2,9 @@
 #define ISPPPDS_GAMMA_RGB_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPds_gamma_rgb : public QWidget
 {

@@ -2,6 +2,9 @@
 #define ISPPPDS_DMA_WRITER_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPds_dma_writer : public QWidget
 {

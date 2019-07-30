@@ -2,6 +2,9 @@
 #define ISPPPRAW_FRONTEND_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPraw_frontend : public QWidget
 {

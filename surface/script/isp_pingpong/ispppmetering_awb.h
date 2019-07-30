@@ -2,6 +2,9 @@
 #define ISPPPMETERING_AWB_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPmetering_awb : public QWidget
 {

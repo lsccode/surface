@@ -38,12 +38,9 @@ HEADERS += \
     script/isp_common/ispcommon.h \
     script/isp_common/ispcminputport.h \
     script/isp_common/ispcmglobal.h \
-    script/isp_pingpong/isppingpong.h \
     script/isp_pingpong/ispppca_correction.h \
     script/isp_pingpong/ispppccm.h \
     script/isp_pingpong/ispppcnr.h \
-    script/isp_pingpong/ispppdecompander0.h \
-    script/isp_pingpong/ispppdecompander1.h \
     script/isp_pingpong/ispppdemosaic_rgbir.h \
     script/isp_pingpong/ispppds_dma_writer.h \
     script/isp_pingpong/ispppds_gamma_rgb.h \
@@ -68,7 +65,10 @@ HEADERS += \
     script/isp_pingpong/isppptop.h \
     script/isp_pingpong/ispppwhite_balance_aexp.h \
     script/isp_pingpong/ispppds_cs_conv.h \
-    script/isp_pingpong/isppingpongfrag1.h
+    script/isp_pingpong/isppingpongfrag1.h \
+    script/isp_pingpong/isppingpongfrag2.h \
+    script/isp_pingpong/isppingpongfrag3.h \
+    script/isp_pingpong/ispppdecompander.h
 
 SOURCES += \
     src/common/main.cpp \
@@ -109,12 +109,9 @@ SOURCES += \
     script/isp_common/ispcommon.cpp \
     script/isp_common/ispcminputport.cpp \
     script/isp_common/ispcmglobal.cpp \
-    script/isp_pingpong/isppingpong.cpp \
     script/isp_pingpong/ispppca_correction.cpp \
     script/isp_pingpong/ispppccm.cpp \
     script/isp_pingpong/ispppcnr.cpp \
-    script/isp_pingpong/ispppdecompander0.cpp \
-    script/isp_pingpong/ispppdecompander1.cpp \
     script/isp_pingpong/ispppdemosaic_rgbir.cpp \
     script/isp_pingpong/ispppds_dma_writer.cpp \
     script/isp_pingpong/ispppds_gamma_rgb.cpp \
@@ -139,7 +136,10 @@ SOURCES += \
     script/isp_pingpong/isppptop.cpp \
     script/isp_pingpong/ispppwhite_balance_aexp.cpp \
     script/isp_pingpong/ispppds_cs_conv.cpp \
-    script/isp_pingpong/isppingpongfrag1.cpp
+    script/isp_pingpong/isppingpongfrag1.cpp \
+    script/isp_pingpong/isppingpongfrag2.cpp \
+    script/isp_pingpong/isppingpongfrag3.cpp \
+    script/isp_pingpong/ispppdecompander.cpp
 
 INCLUDEPATH += \
     include/analy \

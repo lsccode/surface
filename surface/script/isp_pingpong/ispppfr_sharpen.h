@@ -2,6 +2,9 @@
 #define ISPPPFR_SHARPEN_H
 
 #include <QWidget>
+#include <QLineEdit>
+#include <QLabel>
+#include <QPushButton>
 
 class IspPPfr_sharpen : public QWidget
 {
