@@ -45,6 +45,7 @@ public:
 protected:
     void resizeEvent(QResizeEvent * event);
 public slots:
+    void clickedMainSlot(bool checked = false);
     void showCurrent(int index);
 signals:
     void showDevConfig();

@@ -20,5 +20,33 @@
         <file>images/pass.png</file>
         <file>images/drag.png</file>
         <file>images/ccm.png</file>
+        <file>images/nextvpu.png</file>
+        <file>images/ca_correction.png</file>
+        <file>images/isp_common.png</file>
+        <file>images/cnr.png</file>
+        <file>images/decompander.png</file>
+        <file>images/metring_ihist.png</file>
+        <file>images/radial_shading.png</file>
+        <file>images/sensor_offset.png</file>
+        <file>images/frame_stitch.png</file>
+        <file>images/input_formatter.png</file>
+        <file>images/mesh_shading.png</file>
+        <file>images/metering_aexp.png</file>
+        <file>images/metering_af.png</file>
+        <file>images/fr_config.png</file>
+        <file>images/white_balance_aexp.png</file>
+        <file>images/demosaic_rgbir.png</file>
+        <file>images/ds_config.png</file>
+        <file>images/metring ihist.png</file>
+        <file>images/nextvpu1.png</file>
+        <file>images/sinter.png</file>
+        <file>images/top.png</file>
+        <file>images/metring_awb.png</file>
+        <file>images/input_port.png</file>
+        <file>images/isp_global.png</file>
+        <file>images/temper.png</file>
+        <file>images/raw_frontend.png</file>
+        <file>images/black_level.png</file>
+        <file>images/misc.png</file>
     </qresource>
 </RCC>

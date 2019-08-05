@@ -7,8 +7,8 @@
 #include <QPushButton>
 #include <QComboBox>
 
-#define M_MESH_PING_MEM_NUM (0xfff + 1)
-#define M_FILTER_PING_MEM_NUM (0x1f + 1)
+#define M_CA_CORRECTION_MESH_PING_MEM_NUM (0xfff + 1)
+#define M_CA_CORRECTION_FILTER_PING_MEM_NUM (0x1f + 1)
 class IspPPCa_correction : public QWidget
 {
     Q_OBJECT
@@ -29,11 +29,11 @@ public:
 
     QComboBox *ptCb_ca_correction_mesh_ping_mem;
     QLineEdit *ptEdit_ca_correction_mesh_ping_mem;
-    QString szQStr_mesh_ping_mem[M_MESH_PING_MEM_NUM];
+    QString szQStr_ca_correction_mesh_ping_mem[M_CA_CORRECTION_MESH_PING_MEM_NUM];
 
-    QComboBox *ptCb_correction_filter_ping_mem;
-    QLineEdit *ptEdit_correction_filter_ping_mem;
-    QString szQStr_filter_ping_mem[M_FILTER_PING_MEM_NUM];
+    QComboBox *ptCb_ca_correction_filter_ping_mem;
+    QLineEdit *ptEdit_ca_correction_filter_ping_mem;
+    QString szQStr_ca_correction_filter_ping_mem[M_CA_CORRECTION_FILTER_PING_MEM_NUM];
 
     QPushButton *ptPBtn;
 signals:

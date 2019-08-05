@@ -22,7 +22,7 @@ MainWindow::MainWindow()
     ptIspPingPongF1 = new IspPingPongFrag1;
     ptIspPingPongF2 = new IspPingPongFrag2;
     ptIspPingPongF3 = new IspPingPongFrag3;
-    mywidget->setIconSize(QSize(24, 24));
+    mywidget->setIconSize(QSize(40, 20));
     mywidget->setTabShape(QTabWidget::Triangular);
 #if 0
     mywidget->addTab(playWin,QIcon(":/images/films.png"),"实时预览");
@@ -38,16 +38,19 @@ MainWindow::MainWindow()
     mywidget->addTab(advanceConfg,QIcon(":/images/analy.png"),"高级事件");
 #else
     mywidget->addTab(ptIspCm,QIcon(":/images/devCfg.png"),"isp common");
+    //mywidget->addTab(ptIspCm,QIcon(":/images/isp_common.png"),"");
     mywidget->addTab(ptIspPingPongF1,QIcon(":/images/devCfg.png"),"isp pingpong frag1");
     mywidget->addTab(ptIspPingPongF2,QIcon(":/images/devCfg.png"),"isp pingpong frag2");
-    mywidget->addTab(ptIspPingPongF3,QIcon(":/images/devCfg.png"),"isp pingpong frag3");
+//    mywidget->addTab(ptIspPingPongF3,QIcon(":/images/devCfg.png"),"isp pingpong frag3");
 #endif
 
-    setMinimumSize(900,480);
+    setMinimumSize(1080,720);
     setCentralWidget(mywidget);
-    setWindowIcon(QIcon(":/images/appMain.png"));
-    setWindowTitle(tr("ISP script test"));
+    setWindowIcon(QIcon(":/images/nextvpu.png"));
+    setWindowTitle(tr("nextvpu ISP script test"));
 
+    connect(ptIspCm,SIGNAL(clickedCommonSig(bool)),
+            this,SLOT(clickedMainSlot(bool)));
     setAllConnect();
 
 }
@@ -103,7 +106,13 @@ QSize MainWindow::sizeHint() const
 }
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
-//    printf("I'm here!");
+    //    printf("I'm here!");
+    //ptIspCm->
+}
+
+void MainWindow::clickedMainSlot(bool checked)
+{
+
 }
 void MainWindow::showCurrent(int index)
 {

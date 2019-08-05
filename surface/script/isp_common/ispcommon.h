@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QListWidget>
 #include <QStackedLayout>
+#include <QPushButton>
+
 #include "ispcmglobal.h"
 #include "ispcminputport.h"
 
@@ -21,9 +23,13 @@ public:
     IspCmGlobal *ptWidgtIspCmGlobal;
     IspCminputport *ptWidgtIspCmInputPort;
 
-signals:
+    QPushButton *ptPBtn;
+    QPushButton *ptPBExec;
 
+signals:
+    void clickedCommonSig(bool checked);
 public slots:
+    void clickedCommonSlot(bool checked = false);
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
 };
 

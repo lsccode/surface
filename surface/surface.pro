@@ -42,17 +42,9 @@ HEADERS += \
     script/isp_pingpong/ispppccm.h \
     script/isp_pingpong/ispppcnr.h \
     script/isp_pingpong/ispppdemosaic_rgbir.h \
-    script/isp_pingpong/ispppds_dma_writer.h \
-    script/isp_pingpong/ispppds_gamma_rgb.h \
-    script/isp_pingpong/ispppds_sharpen.h \
     script/isp_pingpong/ispppframe_stitch.h \
-    script/isp_pingpong/ispppfr_cs_conv.h \
-    script/isp_pingpong/ispppfr_dma_writer.h \
-    script/isp_pingpong/ispppfr_gamma_rgb.h \
-    script/isp_pingpong/ispppfr_sharpen.h \
     script/isp_pingpong/ispppinput_formatter.h \
     script/isp_pingpong/ispppmesh_shading.h \
-    script/isp_pingpong/ispppmetering_aexp.h \
     script/isp_pingpong/ispppmetering_af.h \
     script/isp_pingpong/ispppmetering_awb.h \
     script/isp_pingpong/ispppmetering_ihist.h \
@@ -60,15 +52,17 @@ HEADERS += \
     script/isp_pingpong/ispppraw_frontend.h \
     script/isp_pingpong/ispppsensor_offset.h \
     script/isp_pingpong/ispppsinter.h \
-    script/isp_pingpong/ispppblack_level.h \
     script/isp_pingpong/isppptemper.h \
     script/isp_pingpong/isppptop.h \
     script/isp_pingpong/ispppwhite_balance_aexp.h \
-    script/isp_pingpong/ispppds_cs_conv.h \
     script/isp_pingpong/isppingpongfrag1.h \
     script/isp_pingpong/isppingpongfrag2.h \
     script/isp_pingpong/isppingpongfrag3.h \
-    script/isp_pingpong/ispppdecompander.h
+    script/isp_pingpong/ispppdecompander.h \
+    script/isp_pingpong/ispppds_config.h \
+    script/isp_pingpong/ispppfr_config.h \
+    script/isp_pingpong/ispppmisc.h \
+    script/isp_pingpong/ispppmetering.h
 
 SOURCES += \
     src/common/main.cpp \
@@ -113,17 +107,9 @@ SOURCES += \
     script/isp_pingpong/ispppccm.cpp \
     script/isp_pingpong/ispppcnr.cpp \
     script/isp_pingpong/ispppdemosaic_rgbir.cpp \
-    script/isp_pingpong/ispppds_dma_writer.cpp \
-    script/isp_pingpong/ispppds_gamma_rgb.cpp \
-    script/isp_pingpong/ispppds_sharpen.cpp \
     script/isp_pingpong/ispppframe_stitch.cpp \
-    script/isp_pingpong/ispppfr_cs_conv.cpp \
-    script/isp_pingpong/ispppfr_dma_writer.cpp \
-    script/isp_pingpong/ispppfr_gamma_rgb.cpp \
-    script/isp_pingpong/ispppfr_sharpen.cpp \
     script/isp_pingpong/ispppinput_formatter.cpp \
     script/isp_pingpong/ispppmesh_shading.cpp \
-    script/isp_pingpong/ispppmetering_aexp.cpp \
     script/isp_pingpong/ispppmetering_af.cpp \
     script/isp_pingpong/ispppmetering_awb.cpp \
     script/isp_pingpong/ispppmetering_ihist.cpp \
@@ -131,15 +117,17 @@ SOURCES += \
     script/isp_pingpong/ispppraw_frontend.cpp \
     script/isp_pingpong/ispppsensor_offset.cpp \
     script/isp_pingpong/ispppsinter.cpp \
-    script/isp_pingpong/ispppblack_level.cpp \
     script/isp_pingpong/isppptemper.cpp \
     script/isp_pingpong/isppptop.cpp \
     script/isp_pingpong/ispppwhite_balance_aexp.cpp \
-    script/isp_pingpong/ispppds_cs_conv.cpp \
     script/isp_pingpong/isppingpongfrag1.cpp \
     script/isp_pingpong/isppingpongfrag2.cpp \
     script/isp_pingpong/isppingpongfrag3.cpp \
-    script/isp_pingpong/ispppdecompander.cpp
+    script/isp_pingpong/ispppdecompander.cpp \
+    script/isp_pingpong/ispppds_config.cpp \
+    script/isp_pingpong/ispppfr_config.cpp \
+    script/isp_pingpong/ispppmisc.cpp \
+    script/isp_pingpong/ispppmetering.cpp
 
 INCLUDEPATH += \
     include/analy \
@@ -185,4 +173,6 @@ RESOURCES += \
     res/surfaceRef.qrc
 QMAKE_CXXFLAGS += -D__STDC_CONSTANT_MACROS
 QMAKE_CXXFLAGS += -DWITH_DOM -DWITH_OPENSSL -DWITH_GZIP  -g -fpermissive
+
+OTHER_FILES +=
 

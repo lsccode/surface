@@ -12,9 +12,11 @@ class IspPPmetering_awb : public QWidget
 public:
     explicit IspPPmetering_awb(QWidget *parent = 0);
 
+    QPushButton *ptPBtn;
 signals:
 
 public slots:
+    void clickedSlot(bool checked = false);
 
 };
 
