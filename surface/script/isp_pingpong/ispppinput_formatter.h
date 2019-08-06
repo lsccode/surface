@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QPushButton>
 
-class IspPPinput_formatter : public QWidget
+#include "script/ispcommonstep.h"
+
+class IspPPinput_formatter : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -35,6 +37,9 @@ public:
     QLineEdit *ptEdit_reg_slope0_select ;
 
     QPushButton *ptPBtn;
+
+public:
+    virtual void step1();
 signals:
 
 public slots:

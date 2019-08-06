@@ -6,11 +6,12 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include "script/ispcommonstep.h"
 
 #define M_SINTER_SHADING_RM_SHADING_LUT_NUMBER (0x20 + 1)
 #define M_SINTER_NOISE_PROFILE_LUT_WEIGHT_LUT_NUMBER (0x7f + 1)
 #define M_LUT3D_MEM_NUMBER (0x3e7 + 1 )
-class IspPPsinter : public QWidget
+class IspPPsinter : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -62,9 +63,6 @@ public:
     QLabel *ptLabel_sad_filt_thresh ;
     QLineEdit *ptEdit_sad_filt_thresh ;
 
-    QLabel *ptLabel_rm_shading_lut ;
-    QLineEdit *ptEdit_rm_shading_lut ;
-
     QComboBox *ptCb_sinter_shading_rm_shading_lut;
     QLineEdit *ptEdit_sinter_shading_rm_shading_lut;
     QString szQStr_sinter_shading_rm_shading_lut[M_SINTER_SHADING_RM_SHADING_LUT_NUMBER];
@@ -78,6 +76,14 @@ public:
     QString szQStr_lut3d_mem[M_LUT3D_MEM_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    void init_lut3d_mem();
+    void init_rm_Shading_lut();
+    void init_sinter_noise_profile_lut_weight_lut();
+    virtual void step1();
+    virtual void step2();
 signals:
 
 public slots:

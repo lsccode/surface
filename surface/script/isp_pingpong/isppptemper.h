@@ -6,9 +6,11 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include "script/ispcommonstep.h"
+
 #define M_TEMPER_NOISE_PROFILE_LUT_WEIGHT_LUT_NUMBER (0x7f + 1 )
 
-class IspPPtemper : public QWidget
+class IspPPtemper : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -68,6 +70,12 @@ public:
     QString szQStr_temper_noise_profile_lut_weight_lut[M_TEMPER_NOISE_PROFILE_LUT_WEIGHT_LUT_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    virtual void step1();
+    virtual void step2();
+
+    void initArray();
 signals:
 
 public slots:

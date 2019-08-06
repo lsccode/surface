@@ -6,10 +6,11 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include "script/ispcommonstep.h"
 
 #define M_RADIAL_SHADING_PING_MEM_NUMBER (0x380+1)
 
-class IspPPradial_shading : public QWidget
+class IspPPradial_shading : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -48,6 +49,10 @@ public:
     QString szQStr_radial_shading_ping_mem[M_RADIAL_SHADING_PING_MEM_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    virtual void step1();
 signals:
 
 public slots:

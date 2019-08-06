@@ -7,9 +7,11 @@
 #include <QPushButton>
 #include <QComboBox>
 
+#include "script/ispcommonstep.h"
+
 #define M_FR_GAMMA_RGB_PING_NUMBER (0x80+1)
 
-class IspPPfr_config : public QWidget
+class IspPPfr_config : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -148,6 +150,11 @@ public:
     QString szQStr_fr_gamma_rgb_ping_mem[M_FR_GAMMA_RGB_PING_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    virtual void step1();
+    virtual void step2();
 signals:
 
 public slots:

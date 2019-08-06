@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QPushButton>
 
-class IspPPtop : public QWidget
+#include "script/ispcommonstep.h"
+
+class IspPPtop : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -40,6 +42,9 @@ public:
     QLabel *ptLabel_reg_rggb_start_pre_mirror ;
     QLineEdit *ptEdit_reg_rggb_start_pre_mirror ;
     QPushButton *ptPBtn;
+
+public:
+    virtual void step1();
 signals:
 
 public slots:

@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QPushButton>
 
-class IspPPCnr : public QWidget
+#include "script/ispcommonstep.h"
+
+class IspPPCnr : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -118,6 +120,8 @@ public:
     QLineEdit *ptEdit_vmean2_threshold ;
 
     QPushButton *ptPBtn;
+public:
+    virtual void step1();
 signals:
 
 public slots:

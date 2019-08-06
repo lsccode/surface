@@ -6,14 +6,14 @@ IspPingPongFrag2::IspPingPongFrag2(QWidget *parent) :
     ptListWidget = new QListWidget;
     ptStackedLayout =  new QStackedLayout;
 
-    pt_fr_config = new IspPPfr_config;
-    pt_frame_stitch = new IspPPframe_stitch;
-    pt_input_formatter = new IspPPinput_formatter;
+//    pt_fr_config = new IspPPfr_config;
+//    pt_frame_stitch = new IspPPframe_stitch;
+//    pt_input_formatter = new IspPPinput_formatter;
     pt_mesh_shading = new IspPPmesh_shading;
     pt_metering = new IspPPmetering;
-    pt_metering_af = new IspPPmetering_af;
-    pt_metering_awb = new IspPPmetering_awb;
-    pt_metering_ihist = new IspPPmetering_ihist;
+//    pt_metering_af = new IspPPmetering_af;
+//    pt_metering_awb = new IspPPmetering_awb;
+//    pt_metering_ihist = new IspPPmetering_ihist;
     pt_radial_shading = new IspPPradial_shading;
     pt_raw_frontend = new IspPPraw_frontend;
     pt_sensor_offset = new IspPPsensor_offset;
@@ -21,6 +21,9 @@ IspPingPongFrag2::IspPingPongFrag2(QWidget *parent) :
     pt_temper = new IspPPtemper;
     pt_top = new IspPPtop;
     pt_white_balance_aexp = new IspPPwhite_balance_aexp;
+
+    ptPBtnOK = new QPushButton("确定");
+    ptPBtnExec = new QPushButton("执行");
 
 //    ptStackedLayout->addWidget(pt_fr_config);
 //    ptStackedLayout->addWidget(pt_frame_stitch);
@@ -123,15 +126,66 @@ IspPingPongFrag2::IspPingPongFrag2(QWidget *parent) :
     ptListBtn_white_balance_aexp->setTextAlignment(Qt::AlignHCenter);
     ptListBtn_white_balance_aexp->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
+#if 0
     QHBoxLayout *layoutMain = new QHBoxLayout;
     layoutMain->addWidget(ptListWidget);
     layoutMain->addLayout(ptStackedLayout);
     setLayout(layoutMain);
+#else
+    QGridLayout *layoutTop = new QGridLayout;
+    layoutTop->addWidget(ptListWidget,0,0,2,1);
+    layoutTop->addLayout(ptStackedLayout,0,1,1,2);
+    layoutTop->addWidget(ptPBtnOK,1,1);
+    layoutTop->addWidget(ptPBtnExec,1,2);
+    setLayout(layoutTop);
+#endif
+
 
     connect(ptListWidget,SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),
             this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
-
+    connect(ptPBtnOK,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF2OkSlot(bool)));
+    connect(ptPBtnExec,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF2ExecSlot(bool)));
     ptListWidget->setCurrentRow(0);
+}
+
+void IspPingPongFrag2::step1()
+{
+    pt_temper->step1();
+    pt_sinter->step1();
+}
+
+void IspPingPongFrag2::step2()
+{
+    pt_top->step1();
+}
+
+void IspPingPongFrag2::step3()
+{
+    pt_sinter->step2();
+    pt_temper->step2();
+}
+
+void IspPingPongFrag2::step4()
+{
+    pt_white_balance_aexp->step1();
+    pt_radial_shading->step1();
+    pt_mesh_shading->step1();
+}
+
+void IspPingPongFrag2::step5()
+{
+    pt_sensor_offset->step1();
+    pt_raw_frontend->step1();
+}
+
+void IspPingPongFrag2::clickedPingPongF2OkSlot(bool checked)
+{
+    emit clickedPingPongF2Sig(true);
+}
+
+void IspPingPongFrag2::clickedPingPongF2ExecSlot(bool checked)
+{
+    execFile();
 }
 
 void IspPingPongFrag2::changePage(QListWidgetItem *current, QListWidgetItem *previous)

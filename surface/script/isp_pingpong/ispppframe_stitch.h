@@ -7,8 +7,10 @@
 #include <QPushButton>
 #include <QComboBox>
 
+#include "script/ispcommonstep.h"
+
 #define M_FRAME_STICH_NP_LUT_X_WEIGHT_NUMBER (0x7f + 1)
-class IspPPframe_stitch : public QWidget
+class IspPPframe_stitch : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -31,6 +33,15 @@ public:
     QString szQStr_frame_stitch_np_lut_vs_weight_lut[M_FRAME_STICH_NP_LUT_X_WEIGHT_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    void init_frame_stitch_np_lut_l_weight_lut();
+    void init_frame_stitch_np_lut_m_weight_lut();
+    void init_frame_stitch_np_lut_s_weight_lut();
+    void init_frame_stitch_np_lut_vs_weight_lut();
+    virtual void step1();
+
 signals:
 
 public slots:

@@ -5,8 +5,13 @@
 #include <QLineEdit>
 #include <QLabel>
 #include <QPushButton>
+#include <QComboBox>
 
-class IspPPdemosaic_rgbir : public QWidget
+#include "script/ispcommonstep.h"
+
+#define M_DEMOSAIC_RGB_NOISE_PROFILE_WEIGHT_LUT_NUMBER (0x7f + 1 )
+
+class IspPPdemosaic_rgbir : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -76,11 +81,21 @@ public:
     QLabel *ptLabel_weight_lut ;
     QLineEdit *ptEdit_weight_lut ;
 
+    QComboBox *ptCb_demosaic_rgb_noise_profile_weight_lut;
+    QLineEdit *ptEdit_demosaic_rgb_noise_profile_weight_lut;
+    QString szQStr_demosaic_rgb_noise_profile_weight_lut[M_DEMOSAIC_RGB_NOISE_PROFILE_WEIGHT_LUT_NUMBER];
+
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    virtual void step1();
 signals:
 
 public slots:
     void clickedSlot(bool checked);
+    void activatedSlot_demosaic_rgb_noise_profile_weight_lut(int index);
+    void textChangedSlot_demosaic_rgb_noise_profile_weight_lut(const QString &text);
 
 };
 

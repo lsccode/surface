@@ -26,8 +26,9 @@
 #include "isppptemper.h"
 #include "isppptop.h"
 #include "ispppwhite_balance_aexp.h"
+#include "script/ispcommonstep.h"
 
-class IspPingPongFrag1 : public QWidget
+class IspPingPongFrag1 : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -46,9 +47,20 @@ public:
     IspPPfr_config *pt_fr_config;
     IspPPframe_stitch *pt_frame_stitch;
     IspPPinput_formatter *pt_input_formatter;
-signals:
 
+    QPushButton *ptPBtnOK;
+    QPushButton *ptPBtnExec;
+
+public:
+    virtual void step1();
+    virtual void step2();
+    virtual void step3();
+    virtual void step4();
+signals:
+    void clickedPingPongF1Sig(bool checked);
 public slots:
+    void clickedPingPongF1OkSlot(bool checked = false);
+    void clickedPingPongF1ExecSlot(bool checked = false);
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
 };
 

@@ -51,6 +51,10 @@ MainWindow::MainWindow()
 
     connect(ptIspCm,SIGNAL(clickedCommonSig(bool)),
             this,SLOT(clickedMainSlot(bool)));
+    connect(ptIspPingPongF1,SIGNAL(clickedPingPongF1Sig(bool)),
+            this,SLOT(clickedMainSlot(bool)));
+    connect(ptIspPingPongF2,SIGNAL(clickedPingPongF2Sig(bool)),
+            this,SLOT(clickedMainSlot(bool)));
     setAllConnect();
 
 }
@@ -112,6 +116,19 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::clickedMainSlot(bool checked)
 {
+    ptIspCm->step1();
+
+    ptIspPingPongF2->step1();
+    ptIspCm->step2();
+    ptIspPingPongF2->step2();
+    ptIspPingPongF1->step1();
+    ptIspPingPongF2->step3();
+    ptIspPingPongF1->step2();
+    ptIspPingPongF2->step4();
+    ptIspPingPongF1->step3();
+    ptIspPingPongF2->step5();
+    ptIspPingPongF1->step4();
+    ptIspPingPongF2->pt_metering->step1();
 
 }
 void MainWindow::showCurrent(int index)

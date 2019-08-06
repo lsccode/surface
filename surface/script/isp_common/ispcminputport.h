@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QPushButton>
 
-class IspCminputport : public QWidget
+#include "script/ispcommonstep.h"
+
+class IspCminputport : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -39,6 +41,17 @@ public:
 
     QPushButton *ptPBtn;
 
+public:
+    QString str_FrStatusReset ;
+    QString str_FrStatusHold ;
+    QString strt_reg_hc_limit ;
+    QString str_reg_hc_size0 ;
+    QString str_reg_hc_size1 ;
+    QString str_reg_mode_request  ;
+    QString str_reg_preset ;
+    QString str_reg_vc_start ;
+public:
+    virtual void step1();
 signals:
 
 public slots:

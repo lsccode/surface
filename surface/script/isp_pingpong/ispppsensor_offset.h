@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QPushButton>
 
-class IspPPsensor_offset : public QWidget
+#include "script/ispcommonstep.h"
+
+class IspPPsensor_offset : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -38,6 +40,9 @@ public:
     QLineEdit *ptEdit_sensor_offset_pre_shadingoffset_11 ;
 
     QPushButton *ptPBtn;
+
+public:
+    virtual void step1();
 signals:
 
 public slots:

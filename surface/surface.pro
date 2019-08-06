@@ -62,7 +62,8 @@ HEADERS += \
     script/isp_pingpong/ispppds_config.h \
     script/isp_pingpong/ispppfr_config.h \
     script/isp_pingpong/ispppmisc.h \
-    script/isp_pingpong/ispppmetering.h
+    script/isp_pingpong/ispppmetering.h \
+    script/ispcommonstep.h
 
 SOURCES += \
     src/common/main.cpp \
@@ -127,7 +128,8 @@ SOURCES += \
     script/isp_pingpong/ispppds_config.cpp \
     script/isp_pingpong/ispppfr_config.cpp \
     script/isp_pingpong/ispppmisc.cpp \
-    script/isp_pingpong/ispppmetering.cpp
+    script/isp_pingpong/ispppmetering.cpp \
+    script/ispcommonstep.cpp
 
 INCLUDEPATH += \
     include/analy \

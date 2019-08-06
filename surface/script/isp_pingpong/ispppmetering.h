@@ -7,10 +7,12 @@
 #include <QPushButton>
 #include <QComboBox>
 
+#include "script/ispcommonstep.h"
+
 #define M_METERING_AWB_ZONES_WEIGHT_NUMBER (0x440 + 1)
 #define M_METERING_HIST_AEXP_ZONES_WEIGHT_NUMBER (0x440 + 1)
 
-class IspPPmetering : public QWidget
+class IspPPmetering : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -119,6 +121,11 @@ public:
     QString szQStr_metering_hist_aexp_zones_weight[M_METERING_HIST_AEXP_ZONES_WEIGHT_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    void init_metering_awb_zones_weight();
+    virtual void step1();
 signals:
 
 public slots:

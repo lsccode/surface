@@ -17,6 +17,9 @@ IspPingPongFrag1::IspPingPongFrag1(QWidget *parent) :
     pt_frame_stitch = new IspPPframe_stitch;
     pt_input_formatter = new IspPPinput_formatter;
 
+    ptPBtnOK = new QPushButton("确定");
+    ptPBtnExec = new QPushButton("执行");
+
     ptStackedLayout->addWidget(pt_misc);
     ptStackedLayout->addWidget(pt_Ca_correction);
     ptStackedLayout->addWidget(pt_Ccm);
@@ -95,15 +98,71 @@ IspPingPongFrag1::IspPingPongFrag1(QWidget *parent) :
     ptListBtn_input_formatter->setTextAlignment(Qt::AlignHCenter);
     ptListBtn_input_formatter->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
+#if 0
     QHBoxLayout *layoutMain = new QHBoxLayout;
     layoutMain->addWidget(ptListWidget);
     layoutMain->addLayout(ptStackedLayout);
     setLayout(layoutMain);
+#else
+    QGridLayout *layoutTop = new QGridLayout;
+    layoutTop->addWidget(ptListWidget,0,0,2,1);
+    layoutTop->addLayout(ptStackedLayout,0,1,1,2);
+    layoutTop->addWidget(ptPBtnOK,1,1);
+    layoutTop->addWidget(ptPBtnExec,1,2);
+    setLayout(layoutTop);
+#endif
+
 
     connect(ptListWidget,SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),
             this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
 
+    connect(ptPBtnOK,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF1OkSlot(bool)));
+    connect(ptPBtnExec,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF1ExecSlot(bool)));
+
     ptListWidget->setCurrentRow(0);
+}
+
+void IspPingPongFrag1::step1()
+{
+    pt_input_formatter->step1();
+    pt_misc->step1();
+}
+
+void IspPingPongFrag1::step2()
+{
+    pt_Ca_correction->step1();
+    pt_misc->step2();
+
+}
+
+void IspPingPongFrag1::step3()
+{
+    pt_demosaic_rgbir->step1();
+    pt_Ccm->step1();
+    pt_misc->step3();
+    pt_decompander->step1();
+    pt_misc->step4();
+    pt_fr_config->step1();
+    pt_ds_config->step1();
+    pt_misc->step5();
+    pt_frame_stitch->step1();
+    pt_misc->step6();
+    pt_Cnr->step1();
+}
+
+void IspPingPongFrag1::step4()
+{
+    pt_fr_config->step2();
+}
+
+void IspPingPongFrag1::clickedPingPongF1OkSlot(bool checked)
+{
+    emit clickedPingPongF1Sig(true);
+}
+
+void IspPingPongFrag1::clickedPingPongF1ExecSlot(bool checked)
+{
+    execFile();
 }
 
 void IspPingPongFrag1::changePage(QListWidgetItem *current, QListWidgetItem *previous)

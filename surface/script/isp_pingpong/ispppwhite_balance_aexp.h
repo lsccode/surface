@@ -6,7 +6,9 @@
 #include <QLabel>
 #include <QPushButton>
 
-class IspPPwhite_balance_aexp : public QWidget
+#include "script/ispcommonstep.h"
+
+class IspPPwhite_balance_aexp : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -26,6 +28,8 @@ public:
     QLineEdit *ptEdit_white_balancereg_gain_10 ;
 
     QPushButton *ptPBtn;
+public:
+    virtual void step1();
 signals:
 
 public slots:

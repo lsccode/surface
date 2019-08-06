@@ -6,11 +6,12 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QComboBox>
+#include "script/ispcommonstep.h"
 
 #define M_NONEQU_GAMMA_SRGB_LUT_COEFF_LUT_NUMBER (0x40 + 1 )
 #define M_PF_CORRECTION_SHADING_SHADING_LUT_NUMBER (0x20 + 1 )
 #define M_LUMVAR_STATS_PING_MEM_NUMBER (0x1ff + 1 )
-class IspPPmisc : public QWidget
+class IspPPmisc : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -47,6 +48,17 @@ public:
     QString szQStr_lumvar_stats_ping_mem[M_LUMVAR_STATS_PING_MEM_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    void init_pf_correction_shading_shading_lut();
+    void init_nonequ_gamma_srgb_lut_coeff_lut();
+    virtual void step1();
+    virtual void step2();
+    virtual void step3();
+    virtual void step4();
+    virtual void step5();
+    virtual void step6();
 signals:
 
 public slots:

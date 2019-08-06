@@ -8,8 +8,9 @@
 
 #include "ispcmglobal.h"
 #include "ispcminputport.h"
+#include "script/ispcommonstep.h"
 
-class IspCommon : public QWidget
+class IspCommon : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -26,10 +27,16 @@ public:
     QPushButton *ptPBtn;
     QPushButton *ptPBExec;
 
+public:
+    virtual void step1();
+    virtual void step2();
+    virtual void step3();
+
 signals:
     void clickedCommonSig(bool checked);
 public slots:
     void clickedCommonSlot(bool checked = false);
+    void clickedCommonExecSlot(bool checked = false);
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
 };
 

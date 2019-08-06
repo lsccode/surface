@@ -5,7 +5,10 @@
 #include <QLineEdit>
 #include <QLabel>
 #include <QPushButton>
-class IspPPCcm : public QWidget
+
+#include "script/ispcommonstep.h"
+
+class IspPPCcm : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -72,8 +75,13 @@ public:
     QLabel *ptLabel_coefft_wb_r;
     QLineEdit *ptEdit_coefft_wb_r;
 
+    QLabel *ptLabel_enable;
+    QLineEdit *ptEdit_enable;
+
     QPushButton *ptPBtn;
 
+public:
+    virtual void step1();
 signals:
 
 public slots:

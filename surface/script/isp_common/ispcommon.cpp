@@ -1,7 +1,7 @@
 #include "ispcommon.h"
 
 IspCommon::IspCommon(QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent),IspCommonStep()
 {
     ptListWidget = new QListWidget;
     ptStackedLayout =  new QStackedLayout;
@@ -46,11 +46,6 @@ IspCommon::IspCommon(QWidget *parent) :
     layoutTop->addLayout(ptStackedLayout,0,1,1,2);
     layoutTop->addWidget(ptPBtn,1,1);
     layoutTop->addWidget(ptPBExec,1,2);
-
-    //QVBoxLayout *layoutMain = new QVBoxLayout;
-    //layoutMain->addLayout(layoutTop);
-    //layoutMain->addWidget(ptPBtn);
-
     setLayout(layoutTop);
 #endif
     ptListWidget->setCurrentRow(0);
@@ -59,14 +54,37 @@ IspCommon::IspCommon(QWidget *parent) :
             this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
 
     connect(ptPBtn,SIGNAL(clicked(bool)),this,SLOT(clickedCommonSlot(bool)));
+    connect(ptPBExec,SIGNAL(clicked(bool)),this,SLOT(clickedCommonExecSlot(bool)));
 
 
 
 }
 
+void IspCommon::step1()
+{
+    initFile();
+    ptWidgtIspCmGlobal->step1();
+    ptWidgtIspCmInputPort->step1();
+    ptWidgtIspCmGlobal->step2();
+}
+
+void IspCommon::step2()
+{
+    ptWidgtIspCmGlobal->step3();
+}
+
+void IspCommon::step3()
+{
+}
+
 void IspCommon::clickedCommonSlot(bool checked)
 {
     emit clickedCommonSig(true);
+}
+
+void IspCommon::clickedCommonExecSlot(bool checked)
+{
+    execFile();
 }
 
 void IspCommon::changePage(QListWidgetItem *current, QListWidgetItem *previous)

@@ -7,9 +7,11 @@
 #include <QPushButton>
 #include <QComboBox>
 
-#define M_MESH_SHADING_PING_MEM_NUMBER (0x80+1)
+#include "script/ispcommonstep.h"
 
-class IspPPmesh_shading : public QWidget
+#define M_MESH_SHADING_PING_MEM_NUMBER (0xfff+1)
+
+class IspPPmesh_shading : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -35,6 +37,10 @@ public:
     QString szQStr_mesh_shading_ping_mem[M_MESH_SHADING_PING_MEM_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    virtual void step1();
 signals:
 
 public slots:

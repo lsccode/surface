@@ -7,8 +7,10 @@
 #include <QPushButton>
 #include <QComboBox>
 
-#define M_RAW_FRONTED_NP_LUT_WEIGHT_LUT_NUMBER (0x7c + 1)
-class IspPPraw_frontend : public QWidget
+#include "script/ispcommonstep.h"
+
+#define M_RAW_FRONTED_NP_LUT_WEIGHT_LUT_NUMBER (0x7f + 1)
+class IspPPraw_frontend : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -46,6 +48,10 @@ public:
     QString szQStr_raw_frontend_np_lut_weight_lut[M_RAW_FRONTED_NP_LUT_WEIGHT_LUT_NUMBER];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    virtual void step1();
 signals:
 
 public slots:

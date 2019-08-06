@@ -7,9 +7,11 @@
 #include <QPushButton>
 #include <QComboBox>
 
+#include "script/ispcommonstep.h"
+
 #define M_DECOMPANDER0_PING_MEN (0x20 + 1)
 #define M_DECOMPANDER1_PING_MEN (0x100 + 1)
-class IspPPdecompander : public QWidget
+class IspPPdecompander : public QWidget,public IspCommonStep
 {
     Q_OBJECT
 public:
@@ -30,6 +32,10 @@ public:
     QString szQStr_decompander1_ping_mem[M_DECOMPANDER1_PING_MEN];
 
     QPushButton *ptPBtn;
+
+public:
+    void init_array();
+    virtual void step1();
 signals:
 
 public slots:
