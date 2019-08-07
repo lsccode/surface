@@ -59,6 +59,7 @@ public:
     virtual void step4();
     virtual void step5();
     virtual void step6();
+    virtual void step7();
 signals:
 
 public slots:

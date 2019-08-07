@@ -155,6 +155,7 @@ public:
     void init_array();
     virtual void step1();
     virtual void step2();
+    virtual void step3();
 signals:
 
 public slots:

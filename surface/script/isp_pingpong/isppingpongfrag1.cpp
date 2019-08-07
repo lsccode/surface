@@ -18,7 +18,7 @@ IspPingPongFrag1::IspPingPongFrag1(QWidget *parent) :
     pt_input_formatter = new IspPPinput_formatter;
 
     ptPBtnOK = new QPushButton("确定");
-    ptPBtnExec = new QPushButton("执行");
+    //ptPBtnExec = new QPushButton("执行");
 
     ptStackedLayout->addWidget(pt_misc);
     ptStackedLayout->addWidget(pt_Ca_correction);
@@ -108,7 +108,7 @@ IspPingPongFrag1::IspPingPongFrag1(QWidget *parent) :
     layoutTop->addWidget(ptListWidget,0,0,2,1);
     layoutTop->addLayout(ptStackedLayout,0,1,1,2);
     layoutTop->addWidget(ptPBtnOK,1,1);
-    layoutTop->addWidget(ptPBtnExec,1,2);
+    //layoutTop->addWidget(ptPBtnExec,1,2);
     setLayout(layoutTop);
 #endif
 
@@ -117,7 +117,7 @@ IspPingPongFrag1::IspPingPongFrag1(QWidget *parent) :
             this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
 
     connect(ptPBtnOK,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF1OkSlot(bool)));
-    connect(ptPBtnExec,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF1ExecSlot(bool)));
+    //connect(ptPBtnExec,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF1ExecSlot(bool)));
 
     ptListWidget->setCurrentRow(0);
 }

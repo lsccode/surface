@@ -1,4 +1,6 @@
 #include <QGridLayout>
+#include <QMessageBox>
+
 #include "ispcmglobal.h"
 
 IspCmGlobal::IspCmGlobal(QWidget *parent) :
@@ -38,6 +40,10 @@ IspCmGlobal::IspCmGlobal(QWidget *parent) :
     ptEdit_watchdog_timer_max_count  = new QLineEdit("02160ec0");
     layoutGrid->addWidget(ptLabel_watchdog_timer_max_count,7,0);layoutGrid->addWidget(ptEdit_watchdog_timer_max_count,7,1);
 
+    ptLabel_input_frame = new QLabel("input frame:");
+    ptEdit_input_frame  = new QLineEdit("model_input_frame0.frm");
+    layoutGrid->addWidget(ptLabel_input_frame,8,0);layoutGrid->addWidget(ptEdit_input_frame,8,1);
+
 //    ptPBtn = new QPushButton("确定");
 //    layoutGrid->addWidget(ptPBtn,8,1,1,1);
 
@@ -51,7 +57,25 @@ IspCmGlobal::IspCmGlobal(QWidget *parent) :
 
     setLayout(mainLayout);
 
-//    connect(ptPBtn,SIGNAL(clicked(bool)),this,SLOT(clickedSlot(bool)));
+    //    connect(ptPBtn,SIGNAL(clicked(bool)),this,SLOT(clickedSlot(bool)));
+}
+
+int IspCmGlobal::checkInputFrame()
+{
+    QString strInputFileName = ptEdit_input_frame->text();
+
+    if(strInputFileName.length() == 0)
+    {
+        QMessageBox msgBox;
+        msgBox.setText(tr("input frame must set!"));
+        ptEdit_input_frame->setStyleSheet("background-color: red;");  // "background-color:rgb(139,28,98)"
+        msgBox.exec();
+        return -1;
+    }
+
+    ptEdit_input_frame->setStyleSheet("background-color:rgb(10,24,106");
+
+    return 0;
 }
 
 void IspCmGlobal::step1()
@@ -104,6 +128,56 @@ void IspCmGlobal::step3()
 {
     writeLine(E_ACTION_WR,"isp_common.isp_global.reg_mcu_override_config_select",ptEdit_reg_mcu_override_config_select->text());
     writeLine(E_ACTION_RR,"isp_common.isp_global.reg_mcu_override_config_select");
+}
+
+void IspCmGlobal::step4()
+{
+    QString szStr_status_vector[7];
+    szStr_status_vector[0] = "00000001";
+    szStr_status_vector[1] = "00000000";
+    szStr_status_vector[2] = "00004000";
+    szStr_status_vector[3] = "00000000";
+    szStr_status_vector[4] = "00008000";
+    szStr_status_vector[5] = "00000000";
+    szStr_status_vector[6] = "00000020";
+
+    for(int i = 0; i < 7; ++i)
+    {
+        writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.status_vector");
+
+        writeLine(E_ACTION_WR,"isp_common.isp_global_interrupt.clear_vector",szStr_status_vector[i]);
+        writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.clear_vector");
+
+        writeLine(E_ACTION_WR,"isp_common.isp_global_interrupt.clear",ptEdit_interrupt_clear->text());
+        writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.clear");
+
+        writeLine(E_ACTION_WR,"isp_common.isp_global_interrupt.clear","00000000");
+        writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.clear");
+    }
+
+}
+
+void IspCmGlobal::step5()
+{
+    QString strInputFileName = ptEdit_input_frame->text();
+    QString strOutputFileName = "out_" + strInputFileName;
+
+    writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.status_vector");
+    writeLine(E_ACTION_WR,"isp_common.isp_global.mcu_ping_pong_config_select","00000001");
+    writeLine(E_ACTION_RR,"isp_common.isp_global.mcu_ping_pong_config_select");
+
+    writeLine(E_ACTION_INDATA,strInputFileName);
+    writeLine(E_ACTION_OUTDATA,strOutputFileName);
+
+    writeLine(E_ACTION_PROCESS);
+    writeLine(E_ACTION_WR,"isp_common.isp_global_interrupt.clear_vector","002715d2");
+    writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.clear_vector");
+
+    writeLine(E_ACTION_WR,"isp_common.isp_global_interrupt.clear",ptEdit_interrupt_clear->text());
+    writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.clear");
+
+    writeLine(E_ACTION_WR,"isp_common.isp_global_interrupt.clear","00000000");
+    writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.clear");
 }
 
 void IspCmGlobal::clickedSlot(bool checked)

@@ -136,7 +136,7 @@ IspPingPongFrag2::IspPingPongFrag2(QWidget *parent) :
     layoutTop->addWidget(ptListWidget,0,0,2,1);
     layoutTop->addLayout(ptStackedLayout,0,1,1,2);
     layoutTop->addWidget(ptPBtnOK,1,1);
-    layoutTop->addWidget(ptPBtnExec,1,2);
+    //layoutTop->addWidget(ptPBtnExec,1,2);
     setLayout(layoutTop);
 #endif
 
@@ -144,7 +144,7 @@ IspPingPongFrag2::IspPingPongFrag2(QWidget *parent) :
     connect(ptListWidget,SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),
             this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
     connect(ptPBtnOK,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF2OkSlot(bool)));
-    connect(ptPBtnExec,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF2ExecSlot(bool)));
+    //connect(ptPBtnExec,SIGNAL(clicked(bool)),this,SLOT(clickedPingPongF2ExecSlot(bool)));
     ptListWidget->setCurrentRow(0);
 }
 

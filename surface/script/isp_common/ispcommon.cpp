@@ -20,7 +20,7 @@ IspCommon::IspCommon(QWidget *parent) :
     ptListWidget->setFrameShape(QFrame::NoFrame);
 
     ptPBtn = new QPushButton("确定");
-    ptPBExec = new QPushButton("执行");
+    //ptPBExec = new QPushButton("执行");
 
     QListWidgetItem *ptListBtnGlobal = new QListWidgetItem(ptListWidget);
     ptListBtnGlobal->setIcon(QIcon(":/images/isp_global.png"));
@@ -45,7 +45,7 @@ IspCommon::IspCommon(QWidget *parent) :
     layoutTop->addWidget(ptListWidget,0,0,2,1);
     layoutTop->addLayout(ptStackedLayout,0,1,1,2);
     layoutTop->addWidget(ptPBtn,1,1);
-    layoutTop->addWidget(ptPBExec,1,2);
+    //layoutTop->addWidget(ptPBExec,1,2);
     setLayout(layoutTop);
 #endif
     ptListWidget->setCurrentRow(0);
@@ -54,18 +54,15 @@ IspCommon::IspCommon(QWidget *parent) :
             this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
 
     connect(ptPBtn,SIGNAL(clicked(bool)),this,SLOT(clickedCommonSlot(bool)));
-    connect(ptPBExec,SIGNAL(clicked(bool)),this,SLOT(clickedCommonExecSlot(bool)));
-
-
-
+    //connect(ptPBExec,SIGNAL(clicked(bool)),this,SLOT(clickedCommonExecSlot(bool)));
 }
 
 void IspCommon::step1()
 {
     initFile();
-    ptWidgtIspCmGlobal->step1();
-    ptWidgtIspCmInputPort->step1();
-    ptWidgtIspCmGlobal->step2();
+//    ptWidgtIspCmGlobal->step1();
+//    ptWidgtIspCmInputPort->step1();
+//    ptWidgtIspCmGlobal->step2();
 }
 
 void IspCommon::step2()

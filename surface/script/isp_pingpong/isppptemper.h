@@ -74,6 +74,7 @@ public:
 public:
     virtual void step1();
     virtual void step2();
+    virtual void step3();
 
     void initArray();
 signals:

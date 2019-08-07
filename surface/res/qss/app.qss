@@ -1,6 +1,6 @@
-*{   
+*{
   font-size:13px;   
-  color:white;    
+  color:white;
 }   
 CallWidget QLineEdit#telEdt  
 {   

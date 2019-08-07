@@ -65,7 +65,7 @@ IspPPmisc::IspPPmisc(QWidget *parent) :
         QString str;
         str.sprintf("lumvar_stats_ping_mem[%x]",i);
         ptCb_lumvar_stats_ping_mem->addItem(str);
-//        szQStr_lumvar_stats_ping_mem[i].sprintf("%x",i);
+        szQStr_lumvar_stats_ping_mem[i].sprintf("%x",0);
     }
     ptEdit_lumvar_stats_ping_mem->setText(szQStr_lumvar_stats_ping_mem[ptCb_lumvar_stats_ping_mem->currentIndex()]);
 
@@ -266,6 +266,16 @@ void IspPPmisc::step6()
 
     writeLine(E_ACTION_WR,"isp_config_ping.sqrt.black_level_out",ptEdit_sqrtblack_level_out->text());
     writeLine(E_ACTION_RR,"isp_config_ping.sqrt.black_level_out");
+}
+
+void IspPPmisc::step7()
+{
+    for(int i = 0; i < M_LUMVAR_STATS_PING_MEM_NUMBER; ++i)
+    {
+        QString strLine;
+        strLine.sprintf("lumvar_stats_ping_mem[%x]",i);
+        writeLine(E_ACTION_RR,strLine);
+    }
 }
 
 void IspPPmisc::clickedSlot(bool checked)

@@ -39,6 +39,9 @@ public:
     QLabel *ptLabel_watchdog_timer_max_count;
     QLineEdit *ptEdit_watchdog_timer_max_count;
 
+    QLabel *ptLabel_input_frame;
+    QLineEdit *ptEdit_input_frame;
+
     QPushButton *ptPBtn;
 
 public:
@@ -51,9 +54,12 @@ public:
     QString str_reg_mcu_override_config_select;
     QString str_watchdog_timer_max_count;
 public:
+    int checkInputFrame();
     virtual void step1();
     virtual void step2();
     virtual void step3();
+    virtual void step4();
+    virtual void step5();
 
 signals:
 

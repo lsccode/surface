@@ -478,6 +478,66 @@ void IspPPfr_config::step2()
 
 }
 
+void IspPPfr_config::step3()
+{
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_11",ptEdit_fr_cs_convcoefft_11->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_11");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_12",ptEdit_fr_cs_convcoefft_12->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_12");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_13",ptEdit_fr_cs_convcoefft_13->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_13");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_21",ptEdit_fr_cs_convcoefft_21->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_21");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_22",ptEdit_fr_cs_convcoefft_22->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_22");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_23",ptEdit_fr_cs_convcoefft_23->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_23");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_31",ptEdit_fr_cs_convcoefft_31->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_31");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_32",ptEdit_fr_cs_convcoefft_32->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_32");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_33",ptEdit_fr_cs_convcoefft_33->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_33");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_o1",ptEdit_fr_cs_convcoefft_o1->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_o1");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_o2",ptEdit_fr_cs_convcoefft_o2->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_o2");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.coefft_o3",ptEdit_fr_cs_convcoefft_o3->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.coefft_o3");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.clip_min_y",ptEdit_fr_cs_convclip_min_y->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.clip_min_y");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.clip_max_y",ptEdit_fr_cs_convclip_max_y->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.clip_max_y");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.clip_min_uv",ptEdit_fr_cs_convclip_min_uv->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.clip_min_uv");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.clip_max_uv",ptEdit_fr_cs_convclip_max_uv->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.clip_max_uv");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.data_mask_ry",ptEdit_fr_cs_convdata_mask_ry->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.data_mask_ry");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.data_mask_gu",ptEdit_fr_cs_convdata_mask_gu->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.data_mask_gu");
+
+    writeLine(E_ACTION_WR,"isp_config_ping.fr_cs_conv.data_mask_bv",ptEdit_fr_cs_convdata_mask_bv->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.fr_cs_conv.data_mask_bv");
+}
+
 void IspPPfr_config::clickedSlot(bool checked)
 {
     QString str_fr_cs_convclip_max_uv = ptEdit_fr_cs_convclip_max_uv->text();

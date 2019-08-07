@@ -11,7 +11,8 @@
 
 #define M_METERING_AWB_ZONES_WEIGHT_NUMBER (0x440 + 1)
 #define M_METERING_HIST_AEXP_ZONES_WEIGHT_NUMBER (0x440 + 1)
-
+#define M_METERING_IHIST_ZONES_WEIGHT_NUMBER (0x440 + 1 )
+#define M_METERING_STATS_PING_MEM_NUMBER (0x88e + 1 )
 class IspPPmetering : public QWidget,public IspCommonStep
 {
     Q_OBJECT
@@ -120,12 +121,21 @@ public:
     QLineEdit *ptEdit_metering_hist_aexp_zones_weight;
     QString szQStr_metering_hist_aexp_zones_weight[M_METERING_HIST_AEXP_ZONES_WEIGHT_NUMBER];
 
+    QComboBox *ptCb_metering_ihist_zones_weight;
+    QLineEdit *ptEdit_metering_ihist_zones_weight;
+    QString szQStr_metering_ihist_zones_weight[M_METERING_IHIST_ZONES_WEIGHT_NUMBER];
+
     QPushButton *ptPBtn;
 
 public:
     void init_array();
     void init_metering_awb_zones_weight();
+    void init_metering_hist_aexp_zones_weight();
+    void init_metering_ihist_zones_weight();
     virtual void step1();
+    virtual void step2();
+    virtual void step3();
+    virtual void step4();
 signals:
 
 public slots:
@@ -136,6 +146,9 @@ public slots:
 
     void activatedSlot_metering_hist_aexp_zones_weight(int index);
     void textChangedSlot_metering_hist_aexp_zones_weight(const QString &text);
+
+    void activatedSlot_metering_ihist_zones_weight(int index);
+    void textChangedSlot_metering_ihist_zones_weight(const QString &text);
 
 };
 

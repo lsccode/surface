@@ -37,6 +37,11 @@ void IspCommonStep::step6()
 
 }
 
+void IspCommonStep::step7()
+{
+
+}
+
 void IspCommonStep::initFile()
 {
     QTime currentTime = QTime::currentTime();
@@ -62,13 +67,17 @@ void IspCommonStep::writeLine(E_SCRIPT_ACTION eAction, QString strRegisterName, 
     {
         "wr",
         "rr",
-        "in",
+        "indata",
+        "outdata",
+        "process",
     };
 
     if(strValue.size() > 0)
         strLine.sprintf("%s %s %s",data[eAction],strRegisterName.toStdString().c_str(),strValue.toStdString().c_str());
-    else
+    else if(strRegisterName.size() > 0)
         strLine.sprintf("%s %s",data[eAction],strRegisterName.toStdString().c_str());
+    else
+        strLine.sprintf("%s",data[eAction]);
 
     strLine += "\n";
     pQfile->write(strLine.toStdString().c_str());

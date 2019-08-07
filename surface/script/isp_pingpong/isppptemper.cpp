@@ -65,7 +65,7 @@ IspPPtemper::IspPPtemper(QWidget *parent) :
     layoutGrid->addWidget(ptLabel_thresh3 ,13,0);layoutGrid->addWidget(ptEdit_thresh3 ,13,1);
 
     ptLabel_reg_enable  = new QLabel("reg_enable :");
-    ptEdit_reg_enable  = new QLineEdit("00000002");
+    ptEdit_reg_enable  = new QLineEdit("00000003");
     layoutGrid->addWidget(ptLabel_reg_enable ,14,0);layoutGrid->addWidget(ptEdit_reg_enable ,14,1);
 
     ptLabel_reg_recursion_limit  = new QLabel("reg_recursion_limit :");
@@ -136,7 +136,7 @@ void IspPPtemper::step1()
 
 void IspPPtemper::step2()
 {
-    writeLine(E_ACTION_WR,"isp_config_ping.temper.reg_enable",ptEdit_reg_enable->text());
+    writeLine(E_ACTION_WR,"isp_config_ping.temper.reg_enable","00000002");
     writeLine(E_ACTION_RR,"isp_config_ping.temper.reg_enable");
 
     writeLine(E_ACTION_WR,"isp_config_ping.temper.reg_recursion_limit","00000206");
@@ -198,6 +198,12 @@ void IspPPtemper::step2()
 
     writeLine(E_ACTION_WR,"isp_config_ping.temper_dma.line_offset",ptEdit_line_offset->text());
     writeLine(E_ACTION_RR,"isp_config_ping.temper_dma.line_offset");
+}
+
+void IspPPtemper::step3()
+{
+    writeLine(E_ACTION_WR,"isp_config_ping.temper.reg_enable",ptEdit_reg_enable->text());
+    writeLine(E_ACTION_RR,"isp_config_ping.temper.reg_enable");
 }
 
 void IspPPtemper::initArray()

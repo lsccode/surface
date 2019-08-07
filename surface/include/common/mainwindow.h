@@ -42,12 +42,20 @@ public:
     virtual QSize minimumSizeHint() const;
     virtual QSize sizeHint() const;
     void setAllConnect();
+
+public:
+//    virtual void paintEvent(QPaintEvent *);
 protected:
     void resizeEvent(QResizeEvent * event);
+//    void closeEvent(QCloseEvent *event);
 public slots:
     void clickedMainSlot(bool checked = false);
     void showCurrent(int index);
 signals:
     void showDevConfig();
+
+public:
+    void writeSettings();
+    void readSettings();
 };
 #endif // MAINWINDOW_H
