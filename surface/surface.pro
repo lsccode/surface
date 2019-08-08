@@ -3,37 +3,6 @@ ROOT_PATH = $$_PRO_FILE_
 TEMPLATE      = app
 HEADERS += \
     include/common/mainwindow.h \
-#    include/play/playWidget.h \
-#    include/play/picwindow.h \
-#    include/play/multWindow.h \
-#    include/config/devConfig.h \
-#    include/config/deviceInfo.h \
-#    include/config/maintenance.h \
-#    include/config/netWorkSet.h \
-#    include/config/userMng.h \
-#    include/config/certificate.h \
-#    include/config/sysLog.h \
-#    include/config/relays.h \
-#    include/config/webPage.h \
-#    include/config/events.h \
-#    include/config/videoImageSet.h \
-#    include/config/ptzControl.h \
-#    include/config/timeConfigure.h \
-#    include/common/addnewdlg.h \
-##    include/analy/analyCfg.h \
-##    include/analy/pass.h \
-#    include/disCovery/discoverybasic.h \
-#    include/common/commonDef.h \
-#    include/analy/pedestrianEvent/PedestrCfg.h \
-#    include/analy/vehicleEvent/VehiCfg.h \
-#    include/analy/cameraEvent/CameraCfg.h \
-#    include/analy/countEvent/CountCfg.h \
-#    include/analy/advanceEvent/AdvanceCfg.h \
-#    include/analy/smokeFireEvent/SmokeFireCfg.h \
-#    include/analy/staticEvent/StaticCfg.h \
-#    include/analy/ptzEvent/PtzCfg.h \
-#    include/analy/pedestrianEvent/pass.h \
-#    include/analy/pedestrianEvent/intra.h \
     script/isp_common/ispcommon.h \
     script/isp_common/ispcminputport.h \
     script/isp_common/ispcmglobal.h \

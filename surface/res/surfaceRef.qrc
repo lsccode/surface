@@ -4,7 +4,6 @@
         <file>images/ccm.png</file>
         <file>images/nextvpu.png</file>
         <file>images/ca_correction.png</file>
-        <file>images/isp_common.png</file>
         <file>images/cnr.png</file>
         <file>images/decompander.png</file>
         <file>images/metring_ihist.png</file>
@@ -29,5 +28,9 @@
         <file>images/raw_frontend.png</file>
         <file>images/black_level.png</file>
         <file>images/misc.png</file>
+        <file>images/isp.png</file>
+        <file>images/isp_com.png</file>
+        <file>images/isp_pip1.png</file>
+        <file>images/isp_pip2.png</file>
     </qresource>
 </RCC>

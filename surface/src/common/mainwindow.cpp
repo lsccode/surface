@@ -13,14 +13,12 @@ MainWindow::MainWindow()
     ptIspPingPongF1 = new IspPingPongFrag1;
     ptIspPingPongF2 = new IspPingPongFrag2;
     ptIspPingPongF3 = new IspPingPongFrag3;
-    mywidget->setIconSize(QSize(40, 20));
+    mywidget->setIconSize(QSize(80, 35));
     mywidget->setTabShape(QTabWidget::Triangular);
 
-    mywidget->addTab(ptIspCm,QIcon(":/images/devCfg.png"),"isp common");
-    //mywidget->addTab(ptIspCm,QIcon(":/images/isp_common.png"),"");
-    mywidget->addTab(ptIspPingPongF1,QIcon(":/images/devCfg.png"),"isp pingpong frag1");
-    mywidget->addTab(ptIspPingPongF2,QIcon(":/images/devCfg.png"),"isp pingpong frag2");
-//    mywidget->addTab(ptIspPingPongF3,QIcon(":/images/devCfg.png"),"isp pingpong frag3");
+    mywidget->addTab(ptIspCm,QIcon(":/images/isp_com.png"),""); // "common"
+    mywidget->addTab(ptIspPingPongF1,QIcon(":/images/isp_pip1.png"),""); // "pingpong frag1"
+    mywidget->addTab(ptIspPingPongF2,QIcon(":/images/isp_pip2.png"),"");// "pingpong frag2"
 
     setMinimumSize(1080,720);
     setCentralWidget(mywidget);
@@ -30,7 +28,7 @@ MainWindow::MainWindow()
 //    setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_SetPalette);
 
-    readSettings();
+//    readSettings();
     connect(ptIspCm,SIGNAL(clickedCommonSig(bool)),
             this,SLOT(clickedMainSlot(bool)));
     connect(ptIspPingPongF1,SIGNAL(clickedPingPongF1Sig(bool)),
