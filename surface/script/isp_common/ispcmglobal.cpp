@@ -73,7 +73,7 @@ int IspCmGlobal::checkInputFrame()
         return -1;
     }
 
-    ptEdit_input_frame->setStyleSheet("QLineEdit {background-color:rgb(10,36,106)}");
+    ptEdit_input_frame->setStyleSheet("QLineEdit {background-color:rgb(24,30,41)}");
 
     return 0;
 }
