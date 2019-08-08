@@ -1,9 +1,8 @@
-#include "commonHeader.h"
+//#include "commonHeader.h"
+#include <QApplication>
+#include <QFile>
 #include "mainwindow.h"
-//#include "mainwindow.h"
-//#ifdef __MINGW32__
-//#undef main /* Prevents SDL from overriding main() */
-//#endif
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);

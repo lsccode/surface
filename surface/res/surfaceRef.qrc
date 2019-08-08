@@ -1,24 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/devInfo.png</file>
-        <file>images/films.png</file>
-        <file>images/sysLog.png</file>
-        <file>images/timSet.png</file>
-        <file>images/usrMng.png</file>
-        <file>images/vdImg.png</file>
-        <file>images/webBro.png</file>
-        <file>images/appMain.png</file>
-        <file>images/devMan.png</file>
-        <file>images/event.png</file>
-        <file>images/usrCert.png</file>
-        <file>images/webcam.png</file>
         <file>qss/app.qss</file>
-        <file>images/devCfg.png</file>
-        <file>images/netSet.png</file>
-        <file>images/analy.png</file>
-        <file>images/intra.png</file>
-        <file>images/pass.png</file>
-        <file>images/drag.png</file>
         <file>images/ccm.png</file>
         <file>images/nextvpu.png</file>
         <file>images/ca_correction.png</file>
@@ -38,7 +20,6 @@
         <file>images/demosaic_rgbir.png</file>
         <file>images/ds_config.png</file>
         <file>images/metring ihist.png</file>
-        <file>images/nextvpu1.png</file>
         <file>images/sinter.png</file>
         <file>images/top.png</file>
         <file>images/metring_awb.png</file>

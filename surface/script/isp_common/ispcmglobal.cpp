@@ -68,12 +68,12 @@ int IspCmGlobal::checkInputFrame()
     {
         QMessageBox msgBox;
         msgBox.setText(tr("input frame must set!"));
-        ptEdit_input_frame->setStyleSheet("background-color: red;");  // "background-color:rgb(139,28,98)"
+        ptEdit_input_frame->setStyleSheet("QLineEdit {background-color: red;}");  // "background-color:rgb(139,28,98)"
         msgBox.exec();
         return -1;
     }
 
-    ptEdit_input_frame->setStyleSheet("background-color:rgb(10,24,106");
+    ptEdit_input_frame->setStyleSheet("QLineEdit {background-color:rgb(10,36,106)}");
 
     return 0;
 }
