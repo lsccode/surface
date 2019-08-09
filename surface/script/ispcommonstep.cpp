@@ -1,7 +1,8 @@
 #include <QTime>
+#include <QProcess>
 #include "ispcommonstep.h"
 
-static QFile* IspCommonStep::pQfile = NULL;
+QFile* IspCommonStep::pQfile = NULL;
 IspCommonStep::IspCommonStep()
 {
 //    pQfile = NULL;
@@ -44,10 +45,17 @@ void IspCommonStep::step7()
 
 void IspCommonStep::initFile()
 {
+#if 1
+    QDateTime qDateTime = QDateTime::currentDateTime();
+    QString strDateString = qDateTime.toString("yyyy_MM_dd_hh_mm_ss");
+    QString strFilename = "arm_" + strDateString + ".scr";
+#else
     QTime currentTime = QTime::currentTime();
     qsrand(currentTime.second() + currentTime.msec());
     QString strFilename;
     strFilename.sprintf("test_%d.script",qrand());
+#endif
+
 
     if(pQfile != NULL)
         delete pQfile;
@@ -90,7 +98,13 @@ void IspCommonStep::execFile()
     if(pQfile == NULL)
        return;
 
+    QString strFileName = pQfile->fileName();
     pQfile->flush();
     pQfile->close();
+
+    QString strExe = "./Lloyd_R0P0 -i " + strFileName + " -o output" + strFileName;
+
+    QProcess::execute(strExe);
+
     return;
 }

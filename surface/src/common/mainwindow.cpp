@@ -13,7 +13,7 @@ MainWindow::MainWindow()
     ptIspPingPongF1 = new IspPingPongFrag1;
     ptIspPingPongF2 = new IspPingPongFrag2;
     ptIspPingPongF3 = new IspPingPongFrag3;
-    mywidget->setIconSize(QSize(80, 35));
+    mywidget->setIconSize(QSize(80, 30));
     mywidget->setTabShape(QTabWidget::Triangular);
 
     mywidget->addTab(ptIspCm,QIcon(":/images/isp_com.png"),""); // "common"

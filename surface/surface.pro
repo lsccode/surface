@@ -68,13 +68,14 @@ SOURCES += \
 
 INCLUDEPATH += \
     include/common \
+LIBS += -lpthread
 
 #LIBS += -lws2_32 -lkernel32 -luser32 -lgdi32 -lm -lz
 
 RESOURCES += \
     res/surfaceRef.qrc
-QMAKE_CXXFLAGS += -D__STDC_CONSTANT_MACROS
-QMAKE_CXXFLAGS += -DWITH_DOM -DWITH_OPENSSL -DWITH_GZIP  -g -fpermissive
+#QMAKE_CXXFLAGS += -D__STDC_CONSTANT_MACROS
+#QMAKE_CXXFLAGS += -DWITH_DOM -DWITH_OPENSSL -DWITH_GZIP  -g -fpermissive
 
 OTHER_FILES +=
 

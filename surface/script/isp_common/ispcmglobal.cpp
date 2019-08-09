@@ -160,7 +160,7 @@ void IspCmGlobal::step4()
 void IspCmGlobal::step5()
 {
     QString strInputFileName = ptEdit_input_frame->text();
-    QString strOutputFileName = "out_" + strInputFileName;
+    QString strOutputFileName = "arm_out_" + strInputFileName;
 
     writeLine(E_ACTION_RR,"isp_common.isp_global_interrupt.status_vector");
     writeLine(E_ACTION_WR,"isp_common.isp_global.mcu_ping_pong_config_select","00000001");
