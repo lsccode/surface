@@ -62,6 +62,8 @@ public slots:
     void clickedPingPongF1OkSlot(bool checked = false);
     void clickedPingPongF1ExecSlot(bool checked = false);
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
+    void clickedF1OKDisableSlot();
+    void clickedF1OKEnableSlot();
 };
 
 #endif // ISPPINGPONGFRAG1_H

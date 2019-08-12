@@ -38,6 +38,8 @@ public slots:
     void clickedCommonSlot(bool checked = false);
     void clickedCommonExecSlot(bool checked = false);
     void changePage(QListWidgetItem *current, QListWidgetItem *previous);
+    void clickedCommonDisableSlot();
+    void clickedCommonEnableSlot();
 };
 
 #endif // ISPCOMMON_H

@@ -106,3 +106,13 @@ void IspCommon::changePage(QListWidgetItem *current, QListWidgetItem *previous)
     }
     return;
 }
+
+void IspCommon::clickedCommonDisableSlot()
+{
+    ptPBtn->setEnabled(false);
+}
+
+void IspCommon::clickedCommonEnableSlot()
+{
+    ptPBtn->setEnabled(true);
+}

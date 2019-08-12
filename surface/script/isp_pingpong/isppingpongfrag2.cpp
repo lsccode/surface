@@ -210,3 +210,13 @@ void IspPingPongFrag2::changePage(QListWidgetItem *current, QListWidgetItem *pre
     }
     return;
 }
+
+void IspPingPongFrag2::clickedF2OKDisableSlot()
+{
+    ptPBtnOK->setEnabled(false);
+}
+
+void IspPingPongFrag2::clickedF2OKEnableSlot()
+{
+    ptPBtnOK->setEnabled(true);
+}

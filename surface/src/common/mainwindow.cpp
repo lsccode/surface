@@ -35,6 +35,23 @@ MainWindow::MainWindow()
             this,SLOT(clickedMainSlot(bool)));
     connect(ptIspPingPongF2,SIGNAL(clickedPingPongF2Sig(bool)),
             this,SLOT(clickedMainSlot(bool)));
+
+    connect(this,SIGNAL(setClickBtnDisSignal()),
+            ptIspPingPongF1,SLOT(clickedF1OKDisableSlot()));
+    connect(this,SIGNAL(setClickBtnEnaSignal()),
+            ptIspPingPongF1,SLOT(clickedF1OKEnableSlot()));
+
+    connect(this,SIGNAL(setClickBtnDisSignal()),
+            ptIspPingPongF2,SLOT(clickedF2OKDisableSlot()));
+    connect(this,SIGNAL(setClickBtnEnaSignal()),
+            ptIspPingPongF2,SLOT(clickedF2OKEnableSlot()));
+
+    connect(this,SIGNAL(setClickBtnDisSignal()),
+            ptIspCm,SLOT(clickedCommonDisableSlot()));
+    connect(this,SIGNAL(setClickBtnEnaSignal()),
+            ptIspCm,SLOT(clickedCommonEnableSlot()));
+
+
     setAllConnect();
 
 }
@@ -130,9 +147,10 @@ void MainWindow::clickedMainSlot(bool checked)
     ptIspPingPongF1->pt_misc->step7();
     ptIspCm->ptWidgtIspCmGlobal->step4();
 
+    emit setClickBtnDisSignal();
     ptIspCm->execFile();
-
-    QProcess::execute("ls");
+    emit setClickBtnEnaSignal();
+    //QProcess::execute("ls");
 }
 void MainWindow::showCurrent(int index)
 {

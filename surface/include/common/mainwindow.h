@@ -30,8 +30,11 @@ protected:
 public slots:
     void clickedMainSlot(bool checked = false);
     void showCurrent(int index);
+
 signals:
     void showDevConfig();
+    void setClickBtnDisSignal();
+    void setClickBtnEnaSignal();
 
 public:
     void writeSettings();
