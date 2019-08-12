@@ -96,6 +96,8 @@ void IspCminputport::step1()
 
 void IspCminputport::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     str_FrStatusReset = ptEdit_FrStatusReset->text();
     str_FrStatusHold = ptEdit_FrStatusHold->text();
     strt_reg_hc_limit = ptEdit_reg_hc_limit->text();

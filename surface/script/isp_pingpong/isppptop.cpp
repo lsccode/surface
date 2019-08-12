@@ -117,6 +117,8 @@ void IspPPtop::step1()
 
 void IspPPtop::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_reg_active_width = ptEdit_reg_active_width->text();
     QString str_reg_ae_5bin_hist_disable = ptEdit_reg_ae_5bin_hist_disable->text();
     QString str_reg_bypass_digital_gain = ptEdit_reg_bypass_digital_gain->text();

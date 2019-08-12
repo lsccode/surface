@@ -36,6 +36,10 @@ MainWindow::MainWindow()
     connect(ptIspPingPongF2,SIGNAL(clickedPingPongF2Sig(bool)),
             this,SLOT(clickedMainSlot(bool)));
 
+    //connect(ptIspCm->ctIspExeThread,)
+    connect(&ptIspCm->ctIspExeThread,SIGNAL(execFinished()),
+            this,SIGNAL(setClickBtnEnaSignal()));
+
     connect(this,SIGNAL(setClickBtnDisSignal()),
             ptIspPingPongF1,SLOT(clickedF1OKDisableSlot()));
     connect(this,SIGNAL(setClickBtnEnaSignal()),
@@ -83,6 +87,8 @@ QSize MainWindow::sizeHint() const
 }
 void MainWindow::resizeEvent(QResizeEvent *event)
 {
+    if(!event)
+        return;
     //    printf("I'm here!");
     //ptIspCm->
 }
@@ -94,6 +100,9 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::clickedMainSlot(bool checked)
 {
+    if(!checked)
+        return;
+
     if(ptIspCm->ptWidgtIspCmGlobal->checkInputFrame() < 0)
     {
         return ;
@@ -149,8 +158,8 @@ void MainWindow::clickedMainSlot(bool checked)
 
     emit setClickBtnDisSignal();
     ptIspCm->execFile();
-    emit setClickBtnEnaSignal();
-    //QProcess::execute("ls");
+//    emit setClickBtnEnaSignal();
+ //   QProcess::execute("ls");
 }
 void MainWindow::showCurrent(int index)
 {

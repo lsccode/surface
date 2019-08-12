@@ -540,6 +540,8 @@ void IspPPfr_config::step3()
 
 void IspPPfr_config::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_fr_cs_convclip_max_uv = ptEdit_fr_cs_convclip_max_uv->text();
     QString str_fr_cs_convclip_max_y = ptEdit_fr_cs_convclip_max_y->text();
     QString str_fr_cs_convclip_min_uv = ptEdit_fr_cs_convclip_min_uv->text();

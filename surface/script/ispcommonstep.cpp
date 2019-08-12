@@ -2,10 +2,42 @@
 #include <QProcess>
 #include "ispcommonstep.h"
 
-QFile* IspCommonStep::pQfile = NULL;
+
+IspExeThread::IspExeThread()
+{
+
+}
+
+IspExeThread::~IspExeThread()
+{
+
+}
+
+void IspExeThread::setExeCmd(QString strcmd)
+{
+    this->cmd = strcmd;
+}
+
+void IspExeThread::run()
+{
+    QProcess process;
+
+    process.start(this->cmd);
+    process.waitForFinished(-1);
+    process.close();
+
+    emit execFinished();
+}
+
+QFile* IspCommonStep::pQfile = Q_NULLPTR;
 IspCommonStep::IspCommonStep()
 {
-//    pQfile = NULL;
+    //    pQfile = NULL;
+}
+
+IspCommonStep::~IspCommonStep()
+{
+
 }
 
 void IspCommonStep::step1()
@@ -67,9 +99,9 @@ void IspCommonStep::initFile()
 
 void IspCommonStep::writeLine(E_SCRIPT_ACTION eAction, QString strRegisterName, QString strValue)
 {
-   QString strLine;
+    QString strLine;
     if(pQfile == NULL)
-       return;
+        return;
 
     const char *data[] =
     {
@@ -95,16 +127,36 @@ void IspCommonStep::writeLine(E_SCRIPT_ACTION eAction, QString strRegisterName, 
 
 void IspCommonStep::execFile()
 {
+#if 0
+    //    if(pQfile == NULL)
+    //       return;
+
+    //    QString strFileName = pQfile->fileName();
+    //    pQfile->flush();
+    //    pQfile->close();
+
+    //    QString strExe = "./Lloyd_R0P0 -i " + strFileName + " -o output" + strFileName;
+
+    //    //QProcess::execute(strExe);
+
+    //    QProcess process;
+
+    //    process.start(strExe);
+    //    process.waitForFinished(-1);
+    //    process.close();
+    //start();
+#else
     if(pQfile == NULL)
-       return;
+        return;
 
     QString strFileName = pQfile->fileName();
     pQfile->flush();
     pQfile->close();
 
     QString strExe = "./Lloyd_R0P0 -i " + strFileName + " -o output" + strFileName;
-
-    QProcess::execute(strExe);
-
+    ctIspExeThread.setExeCmd(strExe);
+    ctIspExeThread.start();
+#endif
     return;
 }
+

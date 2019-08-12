@@ -394,6 +394,8 @@ void IspPPdecompander::step1()
 
 void IspPPdecompander::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_decompander0_reg_enable = ptEdit_decompander0_reg_enable->text();
     QString str_decompander1_reg_enable = ptEdit_decompander1_reg_enable->text();
 }

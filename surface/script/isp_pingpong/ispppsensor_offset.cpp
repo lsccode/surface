@@ -83,6 +83,9 @@ void IspPPsensor_offset::step1()
 
 void IspPPsensor_offset::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_sensor_offset_feoffset_00 = ptEdit_sensor_offset_feoffset_00->text();
     QString str_sensor_offset_feoffset_01 = ptEdit_sensor_offset_feoffset_01->text();
     QString str_sensor_offset_feoffset_10 = ptEdit_sensor_offset_feoffset_10->text();

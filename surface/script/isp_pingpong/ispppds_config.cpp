@@ -287,6 +287,9 @@ void IspPPds_config::step1()
 
 void IspPPds_config::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_reg_enable_dither = ptEdit_reg_enable_dither->text();
     QString str_ds_dma_writer_axi_id_value = ptEdit_ds_dma_writer_axi_id_value->text();
     QString str_ds_dma_writer_bank0_base = ptEdit_ds_dma_writer_bank0_base->text();

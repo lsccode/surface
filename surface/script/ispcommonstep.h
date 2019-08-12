@@ -3,6 +3,8 @@
 
 #include <QFile>
 #include <QString>
+#include <QObject>
+#include <QThread>
 
 enum E_SCRIPT_ACTION {
     E_ACTION_WR,
@@ -13,10 +15,27 @@ enum E_SCRIPT_ACTION {
     E_ACTION_END,
 };
 
+class IspExeThread:public QThread
+{
+    Q_OBJECT
+public:
+    IspExeThread();
+    virtual ~IspExeThread();
+public:
+    void setExeCmd(QString strcmd);
+    virtual void run();
+private:
+    QString cmd;
+
+signals:
+    void execFinished();
+};
+
 class IspCommonStep
 {
 public:
     IspCommonStep();
+    virtual ~IspCommonStep();
 public:
     virtual void step1();
     virtual void step2();
@@ -27,6 +46,7 @@ public:
     virtual void step7();
 
 public:
+    IspExeThread ctIspExeThread;
     static QFile *pQfile;
 
 public:

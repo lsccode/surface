@@ -670,7 +670,8 @@ void IspPPframe_stitch::step1()
 
 void IspPPframe_stitch::clickedSlot(bool checked)
 {
-
+    if(checked)
+        return;
 }
 
 void IspPPframe_stitch::activatedSlot_frame_stitch_np_lut_l_weight_lut(int index)

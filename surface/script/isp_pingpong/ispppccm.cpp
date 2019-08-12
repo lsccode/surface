@@ -158,7 +158,8 @@ void IspPPCcm::step1()
 
 void IspPPCcm::clickedSlot(bool checked)
 {
-
+    if(checked)
+        return;
     QString str_coefft_b_b = ptEdit_coefft_b_b->text();
     QString str_coefft_b_g = ptEdit_coefft_b_g->text();
     QString str_coefft_b_ir = ptEdit_coefft_b_ir->text();

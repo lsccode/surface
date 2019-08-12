@@ -4259,6 +4259,9 @@ void IspPPCa_correction::step1()
 
 void IspPPCa_correction::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_mesh_reload = ptEdit_mesh_reload->text();
     QString str_reg_enable = ptEdit_reg_enable->text();
     QString strt_reg_line_offset = ptEdit_reg_line_offset->text();

@@ -665,6 +665,8 @@ void IspPPradial_shading::step1()
 
 void IspPPradial_shading::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_enable = ptEdit_enable->text();
     QString str_reg_centerb_x = ptEdit_reg_centerb_x->text();
     QString str_reg_centerg_x = ptEdit_reg_centerg_x->text();

@@ -4231,6 +4231,8 @@ void IspPPmesh_shading::step1()
 
 void IspPPmesh_shading::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_mesh_reload = ptEdit_mesh_reload->text();
     QString str_mesh_strength = ptEdit_mesh_strength->text();
     QString str_reg_enable = ptEdit_reg_enable->text();

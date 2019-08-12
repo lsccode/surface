@@ -274,6 +274,9 @@ void IspPPCnr::step1()
 
 void IspPPCnr::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_delta_factor = ptEdit_delta_factor->text();
     QString str_effective_kernel = ptEdit_effective_kernel->text();
     QString str_enable = ptEdit_enable->text();

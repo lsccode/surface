@@ -182,6 +182,8 @@ void IspCmGlobal::step5()
 
 void IspCmGlobal::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     str_chickBit_reg_frame_end_select = ptEdit_chickBit_reg_frame_end_select->text();
     str_interrupt_clear = ptEdit_interrupt_clear->text();
     str_interrupt_clear_vector = ptEdit_interrupt_clear_vector->text();

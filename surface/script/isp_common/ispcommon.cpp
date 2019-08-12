@@ -76,11 +76,15 @@ void IspCommon::step3()
 
 void IspCommon::clickedCommonSlot(bool checked)
 {
+    if(checked)
+        return;
     emit clickedCommonSig(true);
 }
 
 void IspCommon::clickedCommonExecSlot(bool checked)
 {
+    if(!checked)
+        return;
     execFile();
 }
 
@@ -109,10 +113,12 @@ void IspCommon::changePage(QListWidgetItem *current, QListWidgetItem *previous)
 
 void IspCommon::clickedCommonDisableSlot()
 {
+    ptPBtn->setText(tr("执行中..."));
     ptPBtn->setEnabled(false);
 }
 
 void IspCommon::clickedCommonEnableSlot()
 {
     ptPBtn->setEnabled(true);
+    ptPBtn->setText("确定");
 }

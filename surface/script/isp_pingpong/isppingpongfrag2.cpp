@@ -1,7 +1,7 @@
 #include "isppingpongfrag2.h"
 
 IspPingPongFrag2::IspPingPongFrag2(QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent),IspCommonStep()
 {
     ptListWidget = new QListWidget;
     ptStackedLayout =  new QStackedLayout;
@@ -180,11 +180,15 @@ void IspPingPongFrag2::step5()
 
 void IspPingPongFrag2::clickedPingPongF2OkSlot(bool checked)
 {
+    if(checked)
+        return;
     emit clickedPingPongF2Sig(true);
 }
 
 void IspPingPongFrag2::clickedPingPongF2ExecSlot(bool checked)
 {
+    if(checked)
+        return;
     execFile();
 }
 
@@ -213,10 +217,12 @@ void IspPingPongFrag2::changePage(QListWidgetItem *current, QListWidgetItem *pre
 
 void IspPingPongFrag2::clickedF2OKDisableSlot()
 {
+    ptPBtnOK->setText(tr("执行中..."));
     ptPBtnOK->setEnabled(false);
 }
 
 void IspPingPongFrag2::clickedF2OKEnableSlot()
 {
+    ptPBtnOK->setText("确定");
     ptPBtnOK->setEnabled(true);
 }

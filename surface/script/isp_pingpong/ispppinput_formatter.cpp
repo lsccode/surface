@@ -91,6 +91,9 @@ void IspPPinput_formatter::step1()
 
 void IspPPinput_formatter::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_black_level = ptEdit_black_level->text();
     QString str_factor_ml = ptEdit_factor_ml->text();
     QString str_factor_ms = ptEdit_factor_ms->text();

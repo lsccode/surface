@@ -69,7 +69,7 @@ SOURCES += \
 INCLUDEPATH += \
     include/common \
 LIBS += -lpthread
-
+QT += core
 #LIBS += -lws2_32 -lkernel32 -luser32 -lgdi32 -lm -lz
 
 RESOURCES += \

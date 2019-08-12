@@ -267,6 +267,9 @@ void IspPPraw_frontend::step1()
 
 void IspPPraw_frontend::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_exp_thresh = ptEdit_exp_thresh->text();
 //    QString str_weight_lut = ptEdit_weight_lut->text();
     QString str_reg_short_ratio = ptEdit_reg_short_ratio->text();

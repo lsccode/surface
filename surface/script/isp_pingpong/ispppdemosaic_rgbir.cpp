@@ -360,6 +360,9 @@ void IspPPdemosaic_rgbir::step1()
 
 void IspPPdemosaic_rgbir::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_clip_debloom = ptEdit_clip_debloom->text();
     QString str_clip_level = ptEdit_clip_level->text();
     QString str_fc_grad = ptEdit_fc_grad->text();

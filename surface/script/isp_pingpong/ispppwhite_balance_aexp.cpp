@@ -67,6 +67,8 @@ void IspPPwhite_balance_aexp::step1()
 
 void IspPPwhite_balance_aexp::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_white_balance_aexpreg_gain_00 = ptEdit_white_balance_aexpreg_gain_00->text();
     QString str_white_balance_aexpreg_gain_10 = ptEdit_white_balance_aexpreg_gain_10->text();
     QString str_white_balancereg_gain_00 = ptEdit_white_balancereg_gain_00->text();

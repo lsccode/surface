@@ -3700,6 +3700,8 @@ void IspPPmetering::step4()
 
 void IspPPmetering::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_metering_aexphist_thresh_0_1 = ptEdit_metering_aexphist_thresh_0_1->text();
     QString str_metering_aexphist_thresh_1_2 = ptEdit_metering_aexphist_thresh_1_2->text();
     QString str_metering_aexphist_thresh_3_4 = ptEdit_metering_aexphist_thresh_3_4->text();

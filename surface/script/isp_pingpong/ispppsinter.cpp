@@ -1443,6 +1443,9 @@ void IspPPsinter::step2()
 
 void IspPPsinter::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
+
     QString str_config1 = ptEdit_config1->text();
     QString str_config2 = ptEdit_config2->text();
     QString str_black_level = ptEdit_black_level->text();

@@ -340,6 +340,8 @@ void IspPPtemper::initArray()
 
 void IspPPtemper::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_format = ptEdit_format->text();
     QString str_line_offset = ptEdit_line_offset->text();
     QString str_msb_bank_base_reader = ptEdit_msb_bank_base_reader->text();

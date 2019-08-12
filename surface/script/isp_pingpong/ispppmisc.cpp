@@ -280,6 +280,8 @@ void IspPPmisc::step7()
 
 void IspPPmisc::clickedSlot(bool checked)
 {
+    if(checked)
+        return;
     QString str_sqrtblack_level_in = ptEdit_sqrtblack_level_in->text();
     QString str_sqrtblack_level_out = ptEdit_sqrtblack_level_out->text();
     QString str_square_beblack_level_in = ptEdit_square_beblack_level_in->text();
